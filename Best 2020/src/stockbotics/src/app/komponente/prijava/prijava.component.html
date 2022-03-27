@@ -1,0 +1,29 @@
+
+<div id="box" class="container">
+  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" id="login">
+
+    <h2 class="text-center text-white">Login</h2>
+    <!-- LogIn -->
+    <div class="login-form">
+      <form id="login-form" (submit)="prijaviUporabnika()">
+        <div class="form-group">
+          <input class="form-control form-control-lg" type="email" [(ngModel)]="prijavljenUporabnik.email" placeholder="&#xf0e0; Elektronski naslov" name="email">
+          <div *ngIf="submitedPrijava">
+            <div *ngIf="prijavljenUporabnik.email== '' " class="wrong-string">Prosim napišite elektronski naslov!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control form-control-lg" [(ngModel)]="prijavljenUporabnik.geslo" placeholder="&#xf023; Geslo" name="geslo">
+          <div *ngIf="submitedPrijava">
+            <div *ngIf="prijavljenUporabnik.geslo== '' " class="wrong-string">Prosim vpišite vaše geslo!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="form-control form-control-lg btn-info">Prijava</button>
+        </div>
+        <div *ngIf="napakaPriPrijavi" class="alert alert-danger">{{napakaPriPrijavi}}</div>
+      </form>
+      <button class="astext" (click)="router.navigate(['registracija'])">Nimate računa? Registrirajte se!</button>
+    </div>
+  </div>
+</div>

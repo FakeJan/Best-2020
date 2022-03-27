@@ -1,0 +1,6 @@
+/src/stockbotics/node_modules
+/src/node_modules
+/src/app_server/node_modules
+.idea
+./test/pokritost
+.env

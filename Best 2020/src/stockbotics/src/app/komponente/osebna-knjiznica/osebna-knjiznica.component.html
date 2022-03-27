@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="trgovinaTabela">
+    <div *ngIf="osebnaKnjiznica?.length > 0 else elseBlock">
+      <table class="table table-dark" style="width:70%">
+        <tr>
+          <th>Ime Bota</th>
+          <th>Kreator</th>
+          <th>Cena</th>
+        </tr>
+        <tr *ngFor="let bot of osebnaKnjiznica">
+          <td>{{bot.ime}} </td>
+          <td>{{bot.kreator}}</td>
+          <td>{{bot.cena}}</td>
+          <td>
+            <button class="btn btn-info" data-toggle="modal" attr.data-target="#modalDetails{{bot._id}}">Podrobnosti
+            </button>
+          </td>
+          <td *ngIf="!bot.zagnan">
+            <button class="btn btn-info" data-toggle="modal" attr.data-target="#parameter{{bot._id}}">Zagon</button>
+          </td>
+          <td *ngIf="bot.zagnan" (click)="ustaviBota(bot)">
+            <button class="btn btn-info">Ustavitev</button>
+          </td>
+          <td>
+            <button class="btn btn-info">Spremeni parametre</button>
+          </td>
+          <td>
+            <button (click)="izbrisiBota(bot)" class="btn btn-info">Izbriši bota</button>
+          </td>
+        </tr>
+      </table>
+      <div *ngFor="let bot of osebnaKnjiznica" class="modal fade bd-example-modal-lg" id="parameter{{bot._id}}" aria-hidden="true" data-backdrop="static"
+           tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Zaženi bota {{bot.ime}}</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form>
+                  <div class="form-group">
+                    <label for="parameter">Parameter investicije</label>
+                    <input [(ngModel)]="parameter" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="parameter" required>
+                  </div>
+                  <button type="submit" (click)="zazeniBota(bot)" class="btn btn-success" data-dismiss="modal" >Zaženi</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngFor="let bot of osebnaKnjiznica" class="modal fade bd-example-modal-lg" id="modalDetails{{bot._id}}"
+           tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Podrobnosti bota</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div>
+                  <h6>Ime: {{bot.ime}}</h6>
+                </div>
+                <div>
+                  <h6>Opis: {{bot.opis}}</h6>
+                </div>
+                <div>
+                  <h6>Dobičkonosnost: {{bot.dobickonosnost}}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <div class="niBotov">Vaša osebna zbirka botov je prazna. </div>
+    </ng-template>
+  </div>
+
+</div>

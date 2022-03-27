@@ -1,0 +1,23 @@
+name: Neprekinjena dostava
+
+on:
+  push:
+    branches:
+      - produkcijsko-okolje
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - shell: bash
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_PRODUCTION: ${{ secrets.HEROKU_PRODUCTION }}
+        run: git filter-branch -- --all; git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION.git `git subtree split --prefix src produkcijsko-okolje`:master --force

@@ -1,0 +1,31 @@
+name: Neprekinjena integracija
+
+on:
+  push:
+    branches:
+      - testno-okolje
+    paths-ignore:
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
+
+    strategy:
+      matrix:
+        node-verzija:
+          - 12.x
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Uporabi Node.js ${{ matrix.node-verzija }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-verzija }}
+      - run: npm install
+      - run: npm test
+

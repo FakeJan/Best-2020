@@ -1,0 +1,13 @@
+<div class="container-fluid">
+
+  <div *ngIf="uporabniki?.length > 0 else elseBlock">
+    <div class="headerRow">
+      <div class="imePriimekUporabnika">Ime in priimek uporabnika</div>
+      <div class="datumZadnjePrijave">Datum zadnje prijave</div>
+    </div>
+    <app-podrobnosti-uporabnika *ngFor="let uporabnik of uporabniki"
+                                [uporabnik]="uporabnik">
+    </app-podrobnosti-uporabnika>
+  </div>
+  <ng-template #elseBlock>Ni uporabnikov</ng-template>
+</div>

@@ -1,0 +1,58 @@
+.row {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+h5 {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+ul {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+ul > li {
+  display: inline-block;
+  zoom: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa {
+  padding: 20px;
+  text-align: center;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-home {
+  background: #303030;
+  color: white;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: red;
+  color: white;
+}

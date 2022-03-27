@@ -1,0 +1,60 @@
+
+<div id="box" class="container">
+  <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" id="signin">
+    <h2 class="text-center" style="color: #303030">Sign Up</h2>
+    <!-- Sign Up -->
+    <div class="signup-form">
+      <form (submit)="izvediRegistracijo()" id="signup-form" autocomplete="off">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="novUporabnik.ime" (keyup)="OnInputIme($event)" class="form-control form-control-lg" placeholder="&#xf007; Ime " name="ime">
+          <div *ngIf="submited">
+            <div *ngIf="novUporabnik.ime== '' " class="wrong-string">Prosim napišite ime uporabnika!</div>
+            <div *ngIf="niUstreznoIme == true && novUporabnik.ime != '' " class="wrong-string">Neveljaven vnos imena! <br> Filter: Xxxxx Yyyyy</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="novUporabnik.priimek" (keyup)="OnInputPriimek($event)" class="form-control form-control-lg" placeholder="&#xf007; Priimek" name="priimek">
+          <div *ngIf="submited">
+            <div *ngIf="novUporabnik.priimek== '' " class="wrong-string">Prosim napišite priimek uporabnika!</div>
+            <div *ngIf="niUstrezenPriimek == true && novUporabnik.priimek != '' " class="wrong-string">Neveljaven vnos priimka! <br> Filter: Xxxxx Yyyyy</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="novUporabnik.uporabniskoIme" class="form-control form-control-lg" placeholder="&#xf2bd; Uporabniško ime" name="username">
+          <div *ngIf="submited">
+            <div *ngIf="novUporabnik.uporabniskoIme== '' " class="wrong-string">Prosim napišite uporabniško ime uporabnika!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-lg" type="email" (keyup)="OnInputEmail($event)" [(ngModel)]="novUporabnik.email" placeholder="&#xf0e0; Elektronski naslov" name="email">
+          <div *ngIf="submited">
+            <div *ngIf="novUporabnik.email== '' " class="wrong-string">Prosim napišite elektronski naslov!</div>
+            <div *ngIf="niUstrezenEmail == true && novUporabnik.email != '' " class="wrong-string">Neveljaven vnos elektronskega naslova!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" [(ngModel)]="novUporabnik.geslo"  (keyup)="OnInputGeslo($event)"class="form-control form-control-lg" placeholder="&#xf023; Geslo" name="geslo">
+          <div *ngIf="submited">
+            <div *ngIf="novUporabnik.geslo== '' " class="wrong-string">Prosim izberite geslo!</div>
+            <div *ngIf="niUstreznoGeslo == true && novUporabnik.geslo != '' " class="wrong-string">Geslo mora biti dolgo vsaj 8 znakov!</div>
+            <div *ngIf="ponovljenoGeslo != novUporabnik.geslo" class="wrong-string">Gesli se morata ujemati!</div>
+          </div>
+          <input type="password" (keyup)="OnInput($event)" class="form-control form-control-lg mt-3" placeholder="&#xf023; Ponovi geslo" name="ponovigeslo">
+          <div *ngIf="submited">
+            <div *ngIf="ponovljenoGeslo != novUporabnik.geslo" class="wrong-string">Gesli se morata ujemati!</div>
+          </div>
+
+<!--          <p class="mb-1"><i class="far fa-question-circle" id="info-circle" class="text-info"></i> password information.</p>-->
+<!--          <div class="information">-->
+<!--            <p class=" instruction text-muted mb-0">Your password must contain at least 8 letters!</p>-->
+<!--            <p class=" instruction text-muted mt-1">Your password must contain at least one Upper and Lower case letter and at least one number!</p>-->
+<!--          </div>-->
+        </div>
+
+        <div class="form-group">
+          <button id="button-submit" type="submit" class="btn-info form-control form-control-lg">Registracija</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

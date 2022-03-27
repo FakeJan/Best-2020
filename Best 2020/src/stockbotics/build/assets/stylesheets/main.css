@@ -1,0 +1,26 @@
+body {
+  background: #527A78;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #527A78, #AEAF87);
+  background: -moz-linear-gradient(right, #527A78, #AEAF87);
+  background: -o-linear-gradient(right, #527A78, #AEAF87);
+  background: linear-gradient(to right, #527A78, #AEAF87);
+}
+#navbar-section{
+  background-color: rgb(211,211,211);/* Microsoft Edge */
+  background-color: rgba(211,211,211,0.3);
+  border-radius: 10px;
+
+}
+/* potrebno za spreminjanje barve text-a! */
+.navbar-light .navbar-brand,.navbar-light .navbar-brand:hover, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link{
+  color: white;
+  font-size:1.2em
+}
+a {
+  color: #00B7FF;
+}
+
+.footer_area {
+  flex-shrink: 0;
+  background-color: rgba(211,211,211,0.3);
+}

@@ -1,0 +1,68 @@
+table {
+  margin: 0 auto;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+.niBotov {
+  align-content: center;
+  text-align: center;
+  color: yellow;
+  font-size: 20px;
+}
+
+.trgovinaTabela {
+  padding: 30px;
+}
+.uspesenNakup {
+  color: green;
+}
+.premaloSredstev, .limitDosezen {
+  color: red;
+}
+
+.modal-content {
+  background: #D3D3D3;
+}
+
+.btn-success {
+  background: #303030;
+  border-color: lightgreen;
+  color: white;
+}
+
+.btn-success:hover {
+  background: lightgreen;
+  border-color: lightgreen;
+  color: black;
+}
+
+.btn-warning {
+  background: #303030;
+  border-color: #D3D3D3;
+  color: white;
+}
+
+.btn-warning:hover {
+  background:  #D3D3D3;
+  border-color: #D3D3D3;
+  color: black;
+}
+
+.btn-info {
+  background: #303030;
+  border-color: aqua;
+  color: white;
+}
+
+.btn-info:hover {
+  background: aqua;
+  border-color: aqua;
+  color: black;
+}

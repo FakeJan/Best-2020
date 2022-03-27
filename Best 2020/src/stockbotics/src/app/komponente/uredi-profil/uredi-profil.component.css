@@ -1,0 +1,80 @@
+.gumbNazaj {
+  padding-bottom: 8px;
+}
+.gumbDenar {
+  padding-bottom: 8px;
+}
+.gumbSpremembe {
+  padding-bottom: 8px;
+}
+
+label, h2, h3 {
+  color: white;
+}
+
+.obrazecGeslo {
+  padding-left: 30px;
+  width: 50%;
+}
+.btn-success {
+  background: #303030;
+  border-color: lightgreen;
+  color: white;
+  margin: 5px;
+}
+
+.btn-success:hover {
+  background: lightgreen;
+  border-color: lightgreen;
+  color: black;
+  margin: 5px;
+}
+
+.btn-warning {
+  background: #303030;
+  border-color: #D3D3D3;
+  color: white;
+  margin: 5px;
+}
+
+.btn-warning:hover {
+  background:  #D3D3D3;
+  border-color: #D3D3D3;
+  color: black;
+  margin: 5px;
+}
+
+.btn-info {
+  background: #303030;
+  border-color: aqua;
+  color: white;
+  margin: 5px;
+}
+
+.btn-info:hover {
+  background: aqua;
+  border-color: aqua;
+  color: black;
+  margin: 5px;
+}
+
+#potrdiNovoGeslo {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+#zavrniNovoGeslo {
+  margin-left: 10px;
+}
+
+.wrong-pass {
+  color: yellow;
+}
+
+.right-pass {
+  color: aqua;
+}
+
+.wrong-string {
+  color: yellow;
+}

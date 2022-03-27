@@ -1,0 +1,31 @@
+.vrstica {
+  background-color: rgba(211,211,211,0.6);
+  margin-bottom: 10px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imePriimekUporabnika, .datumZadnjePrijave {
+  text-align: center;
+  width: 30vw;
+  font-size: 16pt;
+  float: left;
+}
+
+.datumZadnjePrijave {
+  position: absolute;
+  margin-left: 30vw;
+}
+
+.izbrisUporabnika {
+  float: left;
+  font-size: 14pt;
+  position: absolute;
+  margin-left: 65vw;
+}
+
+
+
+

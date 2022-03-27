@@ -1,0 +1,12 @@
+.modal-content {
+  background: #D3D3D3;
+}
+
+tbody:hover {
+  cursor: pointer;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+}

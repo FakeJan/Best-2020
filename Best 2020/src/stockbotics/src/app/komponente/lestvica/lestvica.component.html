@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="lestvicaTabela">
+    <div *ngIf="uporabniki?.length > 0 else elseBlock">
+      <table class="table table-dark" style="width:70%">
+        <tr>
+          <th>Ime in priimek uporabnika</th>
+          <th>Ocena uporabnika</th>
+        </tr>
+        <tr *ngFor="let uporabnik of uporabniki">
+            <td>{{uporabnik.ime}} {{uporabnik.priimek}}</td>
+            <td>{{uporabnik.ocena}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <ng-template #elseBlock>Ni uporabnikov</ng-template>
+</div>

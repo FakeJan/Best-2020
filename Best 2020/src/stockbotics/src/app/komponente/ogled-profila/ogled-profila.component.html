@@ -1,0 +1,81 @@
+<div *ngIf="uporabnik" class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12">
+    <div class="gap-100"></div>
+    <table class="table table-dark center" style="width: 70%;">
+        <tr>
+          <th class="text-white text-center" colspan="2">Podatki o profilu</th>
+        </tr>
+        <tr>
+          <th class="text-white text-center">Ime:</th>
+          <td class="text-white text-center">{{uporabnik.ime}}</td>
+        </tr>
+        <tr>
+          <th class="text-white text-center">Priimek:</th>
+          <td class="text-white text-center">{{uporabnik.priimek}}</td>
+        </tr>
+        <tr>
+          <th class="text-white text-center">Uporabniško ime:</th>
+          <td class="text-white text-center">{{uporabnik.uporabniskoIme}}</td>
+        </tr>
+        <tr>
+          <th class="text-white text-center">Elektronski naslov:</th>
+          <td class="text-white text-center">{{uporabnik.email}}</td>
+        </tr>
+        <tr>
+          <th class="text-white text-center">Denarna sredstva:</th>
+          <td class="text-white text-center">{{uporabnik.denar}}</td>
+        </tr>
+        <tr>
+          <th class="text-white text-center">Ocena:</th>
+          <td class="text-white text-center">{{uporabnik.ocena}}</td>
+        </tr>
+    </table>
+<!--    <h3 class="text-white text-center">Ime: {{uporabnik.ime }}</h3>-->
+<!--    <h3 class="text-white text-center">Priimek: {{uporabnik.priimek }}</h3>-->
+<!--    <h3 class="text-white text-center">Uporabniško ime: {{uporabnik.uporabniskoIme}}</h3>-->
+<!--    <h3 class="text-white text-center">Elektronski naslov: {{uporabnik.email}}</h3>-->
+<!--    &lt;!&ndash; Denar in ocena uporabnika &ndash;&gt;-->
+<!--    <h3 class="text-white text-center">Denarna sredstva: {{uporabnik.denar}}</h3>-->
+<!--    <h3 class="text-white text-center">Ocena: {{uporabnik.ocena}}</h3>-->
+  </div>
+
+  <div class="row align-buttons">
+    <div class="form-group">
+      <a routerLink="{{uporabnik._id}}"><button class="btn btn-info pull-right" >Uredi profil</button></a>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-info pull-right" (click)="postaniSuperUporabnik()" data-toggle="modal" data-target="#modalVloga">Postani super uporabnik</button>
+    </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-lg" id="modalVloga" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sprememba vloge</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="resetPremaloSredstev()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div *ngIf="!premaloSredstev">
+              <h6>Postali ste super uporabnik. Za dokončanje sprememb se odjavite in ponovno prijavite.</h6>
+            </div>
+            <div *ngIf="premaloSredstev">
+              <h6>Premalo sredstev.</h6>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div *ngIf="!uporabnik">
+  <h3 class="bg-warning text-white text-center">Pridobivanje podatkov uporabnika...</h3>
+</div>

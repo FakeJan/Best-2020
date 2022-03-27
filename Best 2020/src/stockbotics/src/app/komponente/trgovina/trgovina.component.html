@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="trgovinaTabela">
+    <div *ngIf="boti?.length > 0 else elseBlock">
+      <table class="table table-dark" style="width:70%">
+        <tr>
+          <th>Ime Bota</th>
+          <th>Kreator</th>
+          <th>Cena</th>
+        </tr>
+        <tr *ngFor="let bot of boti">
+          <td>{{bot.ime}} </td>
+          <td>{{bot.kreator}}</td>
+          <td>{{bot.cena}}</td>
+          <td><button class="btn btn-info" data-toggle="modal" attr.data-target="#modalDetails{{bot._id}}">Podrobnosti</button></td>
+          <td><button class="btn btn-info" data-toggle="modal" attr.data-target="#modalNakup{{bot._id}}">Nakup</button></td>
+        </tr>
+      </table>
+      <div *ngFor="let bot of boti" class="modal fade bd-example-modal-lg" id="modalDetails{{bot._id}}" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Podrobnosti bota</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div>
+                <h6>Ime: {{bot.ime}}</h6>
+              </div>
+              <div>
+                <h6>Opis: {{bot.opis}}</h6>
+              </div>
+              <div>
+                <h6>Dobičkonosnost: {{bot.dobickonosnost}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div *ngFor="let bot of boti" class="modal fade bd-example-modal-lg" id="modalNakup{{bot._id}}" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Podrobnosti nakupa</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="resetPremaloSredstev(bot)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div>
+                  <h6>Trenutno stanje: {{uporabnik.denar}}</h6>
+                </div>
+                <div>
+                  <h6>Cena bota: {{bot.cena}}</h6>
+                </div>
+                <div>
+                  <h6>Stanje po nakupu: {{uporabnik.denar - bot.cena}}</h6>
+                </div>
+                <div *ngIf="premaloSredstev">
+                  <h6 class="premaloSredstev">Premalo sredstev za izvedbo nakupa.</h6>
+                </div>
+                <div *ngIf="limitBotovDosezen">
+                  <h6 class="limitDosezen">Glede na tvojo vlogo si dosegel limit zakupljenih botov.</h6>
+                </div>
+                <div *ngIf="uspesenNakup">
+                  <h6 class="uspesenNakup">Nakup je bil uspešen.</h6>
+                </div>
+                <div>
+                  <button [disabled]="uspesenNakup" class="btn btn-info" (click)="kupiBota(bot, uporabnik)">Izvedi nakup</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <ng-template #elseBlock>
+    <div class="niBotov">Trgovina je trenutno prazna!</div>
+  </ng-template>
+</div>
+
+</div>

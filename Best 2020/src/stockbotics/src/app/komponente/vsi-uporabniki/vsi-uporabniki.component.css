@@ -1,0 +1,21 @@
+.headerRow {
+  background-color: rgba(211,211,211,0.8);
+  margin-top: 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imePriimekUporabnika, .datumZadnjePrijave {
+  font-weight: bold;
+  text-align: center;
+  font-size: 16pt;
+  width: 30vw;
+  float: left;
+}
+
+.datumZadnjePrijave {
+  position: absolute;
+  margin-left: 30vw;
+}

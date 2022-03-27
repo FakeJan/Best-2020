@@ -1,0 +1,97 @@
+<div *ngIf="uporabnik">
+   <!-- form -->
+  <div class="row">
+
+    <div class="col-md-12 col-12">
+      <form (ngSubmit)="urediProfil()">
+        <div id="form1" style="padding-left: 2%;width: 90%">
+          <div id="form">
+            <div class="form-group">
+              <h2 id="naslovUrejanjeDogodka">Urejanje Profila</h2>
+              <label for="uporabniskoIme">Spremeni Uporabniško ime:</label>
+              <input id="uporabniskoIme" [(ngModel)]="editUporabnik.uporabniskoIme" value="{{uporabnik.uporabniskoIme}}" name="naslov" type="text" class="form-control" placeholder="Uporabnisko ime">
+              <div *ngIf="submited">
+                <div *ngIf="editUporabnik.uporabniskoIme== '' " class="wrong-string">Prosim vnesite uporabnisko ime!</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ime">Imena ni mogoče spreminjati!</label>
+              <input type="text" id="ime" name="avtor" value="{{uporabnik.ime}}" class="form-control" rows="1" placeholder="Ime" disabled>
+
+            </div>
+
+            <div class="form-group">
+              <label for="priimek">Priimka ni mogoče spreminjati!</label>
+              <input type="text" id="priimek" name="avtor" value="{{uporabnik.priimek}}" class="form-control" rows="1" placeholder="Priimek" disabled>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Spremeni Email:</label>
+              <input id="email" [(ngModel)]="editUporabnik.email" value="{{uporabnik.email}}" (keyup)="OnInputEmail($event)" name="email" type="text" class="form-control" placeholder="Email">
+              <div *ngIf="submited">
+                <div *ngIf="editUporabnik.uporabniskoIme== '' " class="wrong-string">Prosim vnesite email!</div>
+                <div *ngIf="!this.emailJeUstrezen" class="wrong-string">Vneseni email ne ustreza formatu emaila!</div>
+              </div>
+            </div>
+
+            <div *ngIf="prikaziObrazecGesla" class="obrazecGeslo form-group">
+              <div class="form-group">
+                <label>Staro geslo:</label>
+                <input type="password" [(ngModel)]="staroGeslo"  (keyup)="OnInputStaroGeslo($event)"class="form-control" name="geslo">
+                <div *ngIf="submitedGeslo">
+                  <div *ngIf="staroGeslo== '' " class="wrong-pass">Vpišite svoje trenutno geslo!</div>
+                  <div *ngIf="!staroGesloOk" class="wrong-pass">To ni vaše trenutno geslo!</div>
+                  <div *ngIf="staroGesloOk" class="right-pass">Vnešeno pravilno geslo!</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Novo geslo:</label>
+                <input type="password" [(ngModel)]="novoGeslo" (keyup)="OnInputGeslo($event)" class="form-control" name="ponovigeslo">
+                <div *ngIf="submitedGeslo">
+                  <div *ngIf="!preveriEnakostGesel()" class="wrong-pass">Gesli se morata ujemati!</div>
+                  <div *ngIf="novoGeslo == '' " class="wrong-pass">Prosim vnesite novo geslo</div>
+                  <div *ngIf="jeGesloUstrezno == false && novoGeslo != '' " class="wrong-pass">Geslo mora biti dolgo vsaj 8 znakov!</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Ponovi novo geslo:</label>
+                <input type="password" [(ngModel)]="ponovljenoGeslo" (keyup)="OnInputGeslo($event)" class="form-control" name="ponovigeslo">
+                <div *ngIf="submitedGeslo">
+                  <div *ngIf="!preveriEnakostGesel()" class="wrong-pass">Gesli se morata ujemati!</div>
+                </div>
+              </div>
+
+              <p *ngIf="submitedGeslo && !uspesnoSpremenjeno" class="wrong-pass">Geslo ni bilo spremenjeno!</p>
+
+              <div class="row">
+                <div>
+                  <button id="potrdiNovoGeslo" (click)="potrdiSprememboGesla()" type="button" class="btn btn-warning">Potrdi geslo</button>
+                </div>
+                <div>
+                  <button id="zavrniNovoGeslo" (click)="zapriObrazecGeslo()" type="button" class="btn btn-warning">Zavrni geslo</button>
+                </div>
+              </div>
+            </div>
+
+            <p *ngIf="uspesnoSpremenjeno" class="right-pass">Geslo je bilo uspešno spremenjeno!</p>
+
+            <div *ngIf="!prikaziObrazecGesla">
+              <button id="sprGeslo" (click)="odpriObrazecGesla()" type="button" class="btn btn-warning">Spremeni geslo</button>
+            </div>
+            <div class="gumbSpremembe">
+              <button id="shrSprBtn" type="submit" class="btn btn-warning">Shrani Spremembe</button>
+            </div>
+            <!--<button id="pocistiBtn" type="reset" class="btn btn-secondary" value="Reset">Počisti</button> -->
+
+          </div>
+          <div class="gumbDenar">
+            <button id="dodajDenar" type="button" (click)="dodajSredstva()" class="btn btn-info">Dodaj sredstva</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

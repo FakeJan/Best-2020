@@ -1,0 +1,56 @@
+<!--<p>-->
+<!--  domaca-stran works!... odgovor strežnika:-->
+<!--</p>-->
+
+<table class="table table-hover table-dark">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Ime podjetja</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let podjetje of seznamPodjetij; let i = index">
+    <th>{{i + 1}}.</th>
+    <td (click)="pridobiZgodovinskePodatkePodjetja(podjetje)" data-toggle="modal" data-target="#modalDelnica">
+      {{podjetje.ime}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<div class="modal fade bd-example-modal-lg" id="modalDelnica" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{trenutnoPodjetjeIme}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div *ngIf="trenutnoPodjetjeDelnice != null && trenutnoPodjetjeDelnice.length > 0">
+            <div *ngFor="let delnica of trenutnoPodjetjeDelnice; let i = index">
+              <div  *ngIf="i == trenutnoPodjetjeDelnice.length-1" >
+                <h5>NASDAQ: {{trenutnoPodjetjeSimbol}}</h5>
+                <h6>Vrednost delnice: {{delnica.adjusted | number:'.0-2'}}</h6>
+                <h6>Cena prodaje: {{delnica.low | number:'.0-2'}}</h6>
+                <h6>Cena nakupa: {{delnica.high | number:'.0-2'}}</h6>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!(trenutnoPodjetjeDelnice != null && trenutnoPodjetjeDelnice.length > 0)">
+            <h6>Izbrano podjetje trenutno nima podatkov o njegovih delnicah</h6>
+          </div>
+          <br/>
+          <br/>
+          <div class="chart-container" style="position: relative; height:300px; width:100%">
+            <canvas id="canvasDiv">{{ linechart }}</canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
