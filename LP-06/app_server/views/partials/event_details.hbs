@@ -1,0 +1,202 @@
+<div class="border mb-2">
+  <h4 class="mb-3 mt-2"><b>Podatki o dogodku</b></h4>
+
+  <div class="mb-3">
+    <label for="title" class="float-start m-1">Ime dogodka</label>
+    <input type="text" class="form-control" value="{{event.title}}" id="title" placeholder="Ime dogodka" />
+    <div id="msgTitle" class="invalid-feedback text-start p-0">
+      {{!-- sporocila o ustreznosti gesla --}}
+    </div>
+  </div>
+
+  <label for="eventImage" class="float-start m-1">Slika za prikaz
+    dogodka</label>
+  <div class="input-group mb-3">
+    <div class="img-wrapper">
+      <img class="img-responsive rounded-circle" id="eventImage" src="
+      {{#if event.eventImage}}
+        {{event.eventImage}}
+      {{else}}
+        /images/events/timetable.png
+      {{/if}}" />
+      <div class="img-overlay">
+        <a type="button" 
+        class="btn btn-primary" 
+        data-bs-toggle="modal" 
+        data-bs-target="#changePictureModal">Uredi</a>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="modal fade" id="changePictureModal" tabindex="-1" role="dialog" aria-labelledby="changePictureModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePictureModalLabel">Spremeni sliko</h5>
+        </div>
+        <div class="modal-body">
+          {{> select_image paths=(folder_content "./public/images/events")}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zapri</button>
+          {{!-- <button id="TODO" type="button" class="btn btn-primary">Shrani spremembe</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <label for="city" class="float-start m-1">Lokacija</label>
+  <div class="input-group mb-3 row m-1">
+    {{!-- <input type="text" list="location"> --}}
+
+    <input type="text" disabled class="form-control col-sm-auto" placeholder="Kraj" id="city" name="city"
+      value="{{event.city}}">
+
+
+
+    <div id="msgObcina" class="invalid-feedback text-start p-0">
+      {{!-- sporocila o ustreznosti gesla --}}
+    </div>
+  </div>
+
+
+  <div class="input-group mb-2 row m-1">
+    <input type="text" disabled class="form-control col-sm-auto" value="{{event.address}}" placeholder="Naslov" id="address">
+
+
+    <button type="button" class="btn btn-primary ms-0 ms-sm-2 mt-2 mt-sm-0 col-sm-auto d-none d-sm-flex"
+      data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Izberi lokacijo
+    </button>
+
+    <div id="msgNaslov" class="invalid-feedback p-0 text-start">
+      {{!-- sporocila o ustreznosti gesla --}}
+    </div>
+
+    <button type="button" class="btn btn-primary ms-0 ms-sm-2 mt-2 mt-sm-0 col-sm-auto d-sm-none d-block"
+      data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Izberi lokacijo
+    </button>
+
+
+
+
+    {{!-- <input type="text" class="form-control col-sm-auto" placeholder="Naslov" id="address" disabled> --}}
+  </div>
+  {{!-- <div class="input-group mb-3 row m-1">
+    <input type="text" class="form-control col-sm-auto" placeholder="Mesto" id="city" disabled>
+  </div> --}}
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Izberi lokacijo</h5>
+        </div>
+        <div class="modal-body">
+          {{> map}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zapri</button>
+          <button id="saveLocation" type="button" class="btn btn-primary">Shrani spremembe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group mb-3">
+    <label for="description" class="float-start m-1">Opis dogodka</label>
+    <textarea class="form-control" id="description" rows="5" placeholder="Opis dogodka">{{event.description}}</textarea>
+  <div id="msgDescription" class="invalid-feedback text-start">
+        {{!-- sporocila o ustreznosti gesla --}}
+      </div>
+  </div>
+
+  <label for="date" class="float-start m-1"> Pričetek dogodka</label>
+  <div class="input-group mb-3 flex-row">
+    <div class="input-daterange">
+      <input type="text" id="date" value="{{date_formatter event.date}}" placeholder="Izberite datum"
+        class="form-control text-start input-daterange-text" />
+      <div id="msgDate" class="invalid-feedback text-start">
+        {{!-- sporocila o ustreznosti gesla --}}
+      </div>
+    </div>
+    <i class="fas fa-calendar-week fa-lg text-center ms-2 input-daterange-icon"></i>
+  </div>
+
+  <label for="tagInput" class="float-start m-1">Oznake dogodka</label>
+  <div class="input-group mb-3 flex-row">
+    <div>
+      <div class="autocomplete">
+        <button id="addTagButton" class="fa fa-plus autocomplete-button"></button>
+        <input autocomplete="new-password" class="autocomplete-text-input" id="tagInput" type="text" name="myCountry"
+          placeholder="Oznaka npr. Šport" />
+      </div>
+    </div>
+  </div>
+
+
+  <h5 class="mb-3 mt-4 text-start"><b>Trenutne oznake: </b></h5>
+
+  <div class="text-start mb-3">
+    <ul id="tagsList" class="chip-list">
+      {{#each event.tags as |tag|}}
+      <li name="tag" class="chip mb-1">
+        {{tag}}
+        <span onclick="removeTag(this.parentNode)" class="closebtn">&times;</span>
+      </li>
+      {{/each}}
+    </ul>
+    <div id="msgTags" class="invalid-feedback">
+      {{!-- sporocila o ustreznosti gesla --}}
+    </div>
+  </div>
+
+  <label for="limitations" class="float-start m-1">Omejitve dogodka</label>
+  <div class="mb-3 input-group" id="limitations">
+    <div class="form-check">
+      <input id="limitedParticipants" class="form-check-input" type="checkbox" {{#valid_range event.participantMax 1
+        false}}checked{{/valid_range}}>
+      <label class="form-check-label float-start" for="limitedParticipants">
+        Omejeno število prijavljenih
+      </label>
+    </div>
+  </div>
+
+  {{#valid_range event.participantMax 1 false}}
+  <input type="number" min="1" class="form-control" value="{{event.participantMax}}" id="participantsMax"
+    placeholder="Maksimalno število udeleženih">
+  {{else}}
+  <input type="number" min="1" class="form-control" disabled id="participantsMax"
+    placeholder="Maksimalno število udeleženih">
+  {{/valid_range}}
+  <div id="msgParticipantsMax" class="invalid-feedback">
+    {{!-- sporocila o ustreznosti gesla --}}
+  </div>
+
+
+  <hr class="mb-4" />
+
+
+  {{#if createEvent}}
+  <a id="createEvent" class="btn btn-outline-primary btn-lg btn-block float-end mb-3" onclick="addEvent()"
+    role="button">Ustvari
+    dogodek</a>
+  {{else}}
+  <a id="saveEvent" class="btn btn-outline-success btn-lg btn-block float-end mb-3"
+    onclick="updateEvent('{{event._id}}', {{json event.coordinates}})" role="button">Shrani</a>
+  {{/if}}
+
+  <script src="/javascripts/event_details.js" async></script>
+  <!-- !Need -->
+  <script src="/javascripts/map.js" async></script>
+  <script src="/javascripts/autocomplete.js" async></script>

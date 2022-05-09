@@ -1,0 +1,152 @@
+<!-- body -->
+<!-- sidebar -->
+<div id="main-sidebar-container" class="col-12 width pull-left">
+  <div class="main-sidebar">
+      <div class="row">
+          <div class="card" style="min-height: 812px;">
+              <div class="card-header">
+                  <b>Filter</b>
+                  <button aria-label="Zapri Navigacijo" class="btn btn-outline-secondary float-end" data-bs-toggle="collapse"
+                      data-bs-target="#main-sidebar-container" aria-controls="main-sidebar-container"
+                      (click)="closeNav()"><i class="fas fa-bars"></i></button>
+              </div>
+
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                          aria-controls="panelsStayOpen-collapseTwo">
+                          Kraj
+                      </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                      aria-labelledby="panelsStayOpen-headingTwo">
+                      <div class="accordion-body">
+                          <div class="form-group">
+                              <label for="locationInput" style="margin-bottom: 0.5rem">Kraj</label>
+                              <input type="text" name="location" class="form-control" id="locationFilter"
+                                  placeholder="Izberi lokacijo" style="margin-bottom: 0.5rem" [(ngModel)]="filters.lokacija">
+                          </div>
+                          <label for="range" class="form-label">Razdalja</label>
+                          <input id="rangeSlider" type="range" value="5" class="form-range" min="5" max="50"
+                              step="5" id="locationRange"
+                              oninput="this.nextElementSibling.value = this.value" [(ngModel)]="filters.razdalja"><output>5</output> km
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        Datum
+                    </button>
+                </h2>
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                      aria-labelledby="panelsStayOpen-headingThree">
+                      <div class="accordion-body">
+                          <label for="startDate" class="float-start m-1">Od:</label>
+                          <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="startDate2" [(ngModel)]="filters.startDate">
+                            <mat-datepicker-toggle matSuffix [for]="startDate2"></mat-datepicker-toggle>
+                            <mat-datepicker #startDate2></mat-datepicker>
+                          </mat-form-field>
+                          <label for="endDate" class="float-start m-1">Do:</label>
+                          <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="endDate2" [(ngModel)]="filters.endDate">
+                            <mat-datepicker-toggle matSuffix [for]="endDate2"></mat-datepicker-toggle>
+                            <mat-datepicker #endDate2></mat-datepicker>
+                          </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                  <a (click)="getDogodki()" id="removeFilters"><button class="btn btn-danger m-2"
+                    style="float: left;">Počisti</button></a>
+                  <a id="filterButton"><button class="btn btn-primary m-2" style="float: right;"
+                    (click)="getDogodkiFiltered()">Potrdi</button></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end sidebar -->
+<div class="container mt-3">
+  <div class="row m-0">
+      <!-- sidebar -->
+      <div class="col-lg-3 ps-0 d-none d-lg-block">
+          <div class="card">
+              <div class="card-header">
+                  <b>Filter</b>
+              </div>
+
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo2">
+                          <button aria-label="Kraj Filter" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#panelsStayOpen-collapseTwo2" aria-expanded="false"
+                              aria-controls="panelsStayOpen-collapseTwo2">
+                              Kraj
+                          </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo2" class="accordion-collapse collapse"
+                          aria-labelledby="panelsStayOpen-headingTwo2">
+                          <div class="accordion-body">
+                              <div class="form-group">
+                                  <label for="locationInput" style="margin-bottom: 0.5rem">Kraj</label>
+                                  <input type="text" name="location" class="form-control" id="locationFilter"
+                                      placeholder="Izberi lokacijo" style="margin-bottom: 0.5rem" [(ngModel)]="filters.lokacija">
+                              </div>
+                              <label for="range" class="form-label">Razdalja</label>
+                              <input id="rangeSlider" type="range" value="5" class="form-range" min="5" max="50"
+                                  step="5" id="locationRange"
+                                  oninput="this.nextElementSibling.value = this.value" [(ngModel)]="filters.razdalja"><output>5</output> km
+                          </div>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingThree2">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#panelsStayOpen-collapseThree2" aria-expanded="false"
+                              aria-controls="panelsStayOpen-collapseThree2">
+                              Datum
+                          </button>
+                      </h2>
+
+                      <div id="panelsStayOpen-collapseThree2" class="accordion-collapse collapse"
+                          aria-labelledby="panelsStayOpen-headingThree2">
+                          <div class="accordion-body">
+                              <label for="startDate" class="float-start m-1">Od:</label>
+                              <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [matDatepicker]="startDate" [(ngModel)]="filters.startDate">
+                                <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                                <mat-datepicker #startDate></mat-datepicker>
+                              </mat-form-field>
+                              <label for="endDate" class="float-start m-1">Do:</label>
+                              <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [matDatepicker]="endDate" [(ngModel)]="filters.endDate">
+                                <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                                <mat-datepicker #endDate></mat-datepicker>
+                              </mat-form-field>
+                          </div>
+                      </div>
+                  </div>
+                  <a (click)="getDogodki()" id="removeFilters"><button class="btn btn-danger m-2"
+                          style="float: left;">Počisti</button></a>
+                  <a id="filterButton"><button class="btn btn-primary m-2" style="float: right;"
+                          (click)="getDogodkiFiltered()">Potrdi</button></a>
+              </div>
+          </div>
+      </div>
+      <!-- /sidebar -->
+
+    <div *ngIf="dogodki" class="col-lg-9 col-md-12">
+      <app-seznam-dogodkov [dogodki]="dogodki" [totalEvents]="totalEvents" [pageSize]="pageSize" [filters]="filters" [useFilter]="filtered"></app-seznam-dogodkov>
+    </div>
+
+  </div>
+</div>

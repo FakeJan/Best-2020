@@ -1,0 +1,22 @@
+<app-main-navbar *ngIf="showMainNavbar()"></app-main-navbar>
+<app-admin-main-navbar *ngIf="showAdminNavbar()"></app-admin-main-navbar>
+
+<main>
+
+  <router-outlet></router-outlet>
+
+  <div class="container" *ngIf="notLogOrReg()">
+    <footer class="mt-5 ">
+      <div class="row">
+        <div class="col-12 d-flex mb-3">
+          <small>
+            &copy;
+            {{ getYear() }}
+            GoodMeets
+          </small>
+        </div>
+      </div>
+
+    </footer>
+  </div>
+</main>

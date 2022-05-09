@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 col-xl-4 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-2 my-sm-5">
+        <div class="card-body p-4 p-sm-5 paddingOkoliForma">
+          <div class="naslovInLogo w-100 p-3">
+            <a href="/"><img src="assets/images/GoodMeetsLogo.png" alt="GoodMeetsLogo" /></a>
+            <div class="h3">Registracija</div>
+          </div>
+
+          <form (ngSubmit)="preveriRegistracijo()" autocomplete="off">
+            <div class="row">
+
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <input type="text" [className]="imeSpremenjeno ? (imeUstrezno ? 'form-control inputRegistration is-valid' : 'form-control inputRegistration is-invalid') : 'form-control inputRegistration'"
+                  [(ngModel)]="registracija.ime" (ngModelChange)="preveriIme()" autocomplete="nope" name="ime"/>
+                  <label>Ime</label>
+
+                  <div *ngIf="!imeUstrezno && imeSpremenjeno" class="invalid-feedback">
+                    Neveljavno ime!
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <input type="text" [className]="priimekSpremenjen ? (priimekUstrezno ? 'form-control inputRegistration is-valid' : 'form-control inputRegistration is-invalid') : 'form-control inputRegistration'"
+                  [(ngModel)]="registracija.priimek" (ngModelChange)="preveriPriimek()" name="priimek"/>
+                  <label>Priimek</label>
+                  <div *ngIf="!priimekUstrezno && priimekSpremenjen" class="invalid-feedback">
+                    Neveljaven priimek!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" [className]="uporabniskoImeSpremenjeno ? (uporabniskoImeUstrezno ? 'form-control inputRegistration is-valid' : 'form-control inputRegistration is-invalid') : 'form-control inputRegistration'"
+              [(ngModel)]="registracija.uporabniskoIme" (ngModelChange)="preveriUporabniskoIme()" name="uporabniskoIme"/>
+              <label>Uporabniško ime</label>
+              <div *ngIf="!uporabniskoImeUstrezno && uporabniskoImeSpremenjeno" class="invalid-feedback">
+                {{uporabniskoImeSporocilo}}
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" [className]="emailSpremenjen ? (emailUstrezno ? 'form-control inputRegistration is-valid' : 'form-control inputRegistration is-invalid') : 'form-control inputRegistration'"
+              [(ngModel)]="registracija.email" (ngModelChange)="preveriEmail()" name="email"/>
+              <label>E-naslov</label>
+              <div *ngIf="!emailUstrezno && emailSpremenjen" class="invalid-feedback">
+                {{emailSporocilo}}
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" [className]="prvoGesloSpremenjeno ? (prvoGesloUstrezno ? 'form-control inputRegistration is-valid' : 'form-control inputRegistration is-invalid') : 'form-control inputRegistration'"
+              [(ngModel)]="registracija.prvoGeslo" (ngModelChange)="preveriPrvoGeslo()" name="prvoGeslo" />
+              <label>Geslo</label>
+              <div *ngIf="!prvoGesloUstrezno&& prvoGesloSpremenjeno" class="invalid-feedback">
+                {{prvoGesloSporocilo}}
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" [className]="drugoGesloSpremenjeno ? (gesloUstrezno ? 'form-control inputRegistration is-valid' : 'form-control inputRegistration is-invalid') : 'form-control inputRegistration'"
+              [(ngModel)]="registracija.drugoGeslo" (ngModelChange)="preveriDrugoGeslo()" name="drugoGeslo" />
+              <label>Potrditev gesla</label>
+              <div *ngIf="!gesloUstrezno&& drugoGesloSpremenjeno" class="invalid-feedback">
+                {{drugoGesloSporocilo}}
+              </div>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" (change)="posljiEmail=!posljiEmail" [checked]="posljiEmail" />
+              <label class="form-check-label" for="posliEmailPotrdilo">
+                Pošlji email ob uspešni registraciji
+              </label>
+            </div>
+            <div class="d-grid">
+              <button [disabled]="!jePovezava()" class="
+                  mt-1 mb-2
+                  btn btn-primary btn-login
+                  text-uppercase
+                  fw-bold"
+                type="submit">
+                USTVARI RAČUN
+              </button>
+              <p class="mt-1">
+                Že imaš račun?
+                <a class="text-decoration-none" routerLink="/login">Prijavi se</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

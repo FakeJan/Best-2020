@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="sl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatTest.css">
+
+    <title>Klepet</title>
+
+    <script>
+        function openNav() {
+            document.getElementById("main-sidebar-container").style.marginLeft = "0%";
+        }
+
+        function closeNav() {
+            document.getElementById("main-sidebar-container").style.marginLeft = "-100%";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand mt-2 mt-lg-0" href="mainpage.html">
+                <img src="../assets/images/GoodMeetsLogo.png" class="img-fluid" alt="Logo" />
+            </a>
+
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-body active" href="joined_events.html">Moji dogodki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body active" href="event_chat.html">Klepet</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dropdown ">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Lojze Novak
+                    <img src="../assets/images/avatar.jpg" alt="Profile picture" width="32" height="32"
+                        class="rounded-circle ms-2">
+
+                </a>
+                <ul class="dropdown-menu w-100 text-small" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="joined_events.html">
+                            Moji dogodki</a></li>
+                    <li><a class="dropdown-item" href="account_Settings.html">Nastavitve</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="homepage.html">Izpis</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- ./Navigation -->
+
+    <!-- sidebar -->
+    <div id="main-sidebar-container" class="col-12 width pull-left">
+        <div class="main-sidebar">
+            <div id="plist" class="people-list">
+                <div class="m-2">
+                    <div class="autocomplete">
+                        <input id="myInput" autocomplete="off" class="autocomplete-text-input" type="text"
+                            name="myCountry" placeholder="Išči">
+                        <button class="fas fa-search autocomplete-button">
+                        </button>
+                    </div>
+                    <button class="btn btn-outline-secondary" style="float: right; margin-top: 5px;"
+                        data-bs-toggle="collapse" data-bs-target="#main-sidebar-container"
+                        aria-controls="main-sidebar-container" onclick="closeNav()"><i class="fas fa-bars"></i></button>
+                </div>
+                <hr class="m-0">
+                <ul class="list-unstyled chat-list m-0 p-0 overflow-auto">
+                    <li class="clearfix active border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 1</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                ago </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 2</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                ago </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 3</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                ago </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 4</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                ago </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 5</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                ago </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 6</div>
+                            <div class="status"> <i class="fa fa-circle online"></i> left 7 mins
+                                ago </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 7</div>
+                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 8</div>
+                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 9</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours
+                                ago </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 10</div>
+                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                        </div>
+                    </li>
+                    <li class="clearfix border">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                        <div class="about">
+                            <div class="name">Dodogek 6</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> offline since
+                                Oct 28 </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end sidebar -->
+
+    <!-- body -->
+    <div class="container mt-3">
+        <div class="border col col-12 flex-fill mb-3">
+            <div class="card chat-app p-0 m-0">
+                <div id="plist" class="people-list">
+                    <div class="m-2">
+                        <div class="autocomplete">
+                            <input id="myInput" autocomplete="off" class="autocomplete-text-input" type="text"
+                                name="myCountry" placeholder="Išči">
+                            <button class="fas fa-search autocomplete-button">
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="m-0">
+                    <ul class="list-unstyled chat-list m-0 p-0 overflow-auto">
+                        <li class="clearfix active border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dogodek xyz</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                    ago </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 2</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                    ago </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 3</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                    ago </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 4</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                    ago </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 5</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins
+                                    ago </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 6</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> left 7 mins
+                                    ago </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 7</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 8</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 9</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours
+                                    ago </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 10</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                            </div>
+                        </li>
+                        <li class="clearfix border">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">Dodogek 6</div>
+                                <div class="status"> <i class="fa fa-circle offline"></i> offline since
+                                    Oct 28 </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="chat">
+
+                    <div class="chat-header clearfix m-0 border-bottom">
+                        <button class="btn btn-outline-secondary d-md-none" data-bs-toggle="collapse"
+                            data-bs-target="#main-sidebar-container" aria-controls="main-sidebar-container"
+                            onclick="openNav()" style="float: left; margin-left: 10px; margin-right: 5px;"><i
+                                class="fas fa-bars"></i></button>
+                        <h1 class="m-2 text-black float-st center">Dogodek xyz</h1>
+                    </div>
+
+                    <div class="chat-history">
+                        <ul class="m-b-0">
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data text-end">
+                                    <span class="message-data-time"><small>10:10 Danes</small></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                </div>
+                                <div class="message other-message float-end"> Kdaj pa naj približno pridemo
+                                    na dogodek? </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                    <span class="message-data-time">Martin Novak, <small>10:12 Danes</small> </span>
+                                </div>
+                                <div class="message my-message">Okoli 18 ure popoldne.</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                    <span class="message-data-time">Martin Novak, <small>10:15 Danes</small> </span>
+                                </div>
+                                <div class="message my-message">Dobimo pa se na dogovorjenem mestu, kot piše
+                                    v opisu.</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="m-0">
+                    <div class="chat-message">
+                        <div class="input-group m-0">
+                            <input type="text" class="form-control" placeholder="Enter text here...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

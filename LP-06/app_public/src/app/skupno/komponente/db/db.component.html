@@ -1,0 +1,33 @@
+<div class="row mb-3 mx-1">
+    <div class="col-sm-12 col-md-6 col-lg-2">
+        <a routerLink="/"><img src="assets/images/GoodMeetsLogo.png" width="100%"></a>
+    </div>
+</div>
+<div class="row mb-1 mx-1">
+    <div class="col-12">
+        <button class="btn btn-primary text-uppercase fw-bold" id="gumbVnosPodatkov" (click)="vnesiPodatke()">
+            VNOS ZAČETNIH PODATKOV
+        </button>
+    </div>
+</div>
+
+<div class="row mb-4 mx-1">
+    <div class="col-12">
+        <p id="vnosPodatkovSporociloOk" class="valid-feedback">Podatki so bili uspešno vneseni!</p>
+        <p id="vnosPodatkovSporociloError" class="invalid-feedback">Napaka pri vnosu podatkov!</p>
+    </div>
+</div>
+
+<div class="row mb-1 mx-1">
+    <div class="col-12">
+        <button class="btn btn-danger text-uppercase fw-bold" id="gumbVnosPodatkov" (click)="odstraniPodatke()">
+            IZBRIŠI VSE PODATKE
+        </button>
+    </div>
+</div>
+<div class="row mb-4 mx-1">
+    <div class="col-12">
+        <p id="odstranitevPodatkovSporociloOk" class="valid-feedback">Podatki so bili uspešno odstranjeni!</p>
+        <p id="odstranitevPodatkovSporociloError" class="invalid-feedback">Napaka pri odstranitvi podatkov!</p>
+    </div>
+</div>

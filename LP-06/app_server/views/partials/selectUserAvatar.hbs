@@ -1,0 +1,10 @@
+<div class="row" style="max-height: 400px; overflow: auto;">
+    {{#each paths as |path|}}
+    <div class="col-6 col-sm-6 col-lg-4 mb-2">
+        <a onclick="zamenjajSliko('{{path}}')" class="m-2" style="width: 20px; cursor: pointer;">
+            <img class="rounded-circle" style="width: 144px; height: 144px;" id="eventImage"
+                src="/images/profileAvatars/avatarOptions/{{path}}" />
+        </a>
+    </div>
+    {{/each}}
+</div>

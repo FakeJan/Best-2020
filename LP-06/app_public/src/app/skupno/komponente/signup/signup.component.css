@@ -1,0 +1,33 @@
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+.paddingOkoliForma {
+  padding-bottom: 1.8rem !important;
+}
+.naslovInLogo {
+  text-align: center;
+  padding-top: 0.1rem !important;
+}
+.signupButton:hover {
+  color: white;
+}
+.signupButton {
+  text-decoration: none;
+  color: white;
+}
+.inputRegistration{
+    border: 1px solid #ced4da !important;
+    background-color: white !important;
+    color: #3e3f3a;
+}
+.footerLogSign {
+  display: table-footer-group;
+  text-align: center;
+  opacity: 0.5;
+  padding-bottom: 1rem;
+}
+.invalid-feedback{
+  display : block;
+}

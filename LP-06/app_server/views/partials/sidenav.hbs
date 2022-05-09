@@ -1,0 +1,26 @@
+<div class="nav nav-pills flex-column m-0 mb-3 col p-0 pe-lg-2">
+    <li class="nav-item mb-1">
+        <a href="../create_event"
+            class="border nav-link {{#if createEvent}}active disabled bg-primary bg-gradient text-white{{/if}}"
+            aria-current="page">
+            <i class="far fa-calendar-plus"></i>
+            Dodaj nov dogodek
+        </a>
+    </li>
+    <li class="nav-item mb-1">
+        <a id="createdEventsNav" style="cursor: pointer;" onclick="getCreatedEvents()"
+            class="border nav-link  {{#if createdEvents}}active disabled bg-primary bg-gradient text-white{{/if}}"
+            aria-current="page">
+            <i class="fas fa-edit"></i>
+            Ustvarjeni dogodki
+        </a>
+    </li>
+    <li class="nav-item mb-1">
+        <a id="joinedEventsNav" style="cursor: pointer;" onclick="getJoinedEvents()"
+            class="border nav-link  {{#if joinedEvents}}active disabled bg-primary bg-gradient text-white{{/if}}"
+            aria-current="page">
+            <i class="far fa-calendar-check"></i>
+            Pridruženi dogodki
+        </a>
+    </li>
+</div>

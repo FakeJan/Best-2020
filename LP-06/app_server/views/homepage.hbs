@@ -1,0 +1,186 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand mt-lg-0" href="/">
+            <img src="/images/GoodMeetsLogo.png" class="img-fluid" alt="Logo" />
+        </a>
+
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mt-2" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="#kategorije">Kategorije</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex align-items-center">
+            <a class="btn btn-outline-primary event-side-button me-2" href="login" role="button">Prijava</a>
+            <a class="btn btn-primary event-side-button me-2" href="signup" role="button">Registracija</a>
+        </div>
+    </div>
+</nav>
+<!-- ./Navigation -->
+
+<!-- slike -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-interval="false">
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/images/cover5.jpg" class="d-block w-100 img-fluid" alt="Slika druženja">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/cover3.jpg" class="d-block w-100 img-fluid" alt="Slika sporta">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/cover4.jpg" class="d-block w-100 img-fluid" alt="Slika filma">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/cover1.jpg" class="d-block w-100 img-fluid" alt="Slika namiznih iger">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/cover2.jpg" class="d-block w-100 img-fluid" alt="Slika učenja">
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+    <div id="kategorije"></div>
+</div>
+
+<!-- Marketing messaging and featurettes
+      ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+
+        <!-- first column -->
+        <div class="col-lg-4">
+            <!--
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                            dy=".3em">140x140</text>
+                    </svg>
+                    -->
+            <img src="/images/meetIcon.png" class="img-fluid" alt="meetIcon" />
+
+            <h2>Druženja</h2>
+            <p>
+                Udeleži se družabnih dogodkov s prijatelji in znanci, ter ustvari nove spomine.
+            </p>
+            <p><a class="btn btn-primary" href="#featureSport">Preberi več &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <!-- second column -->
+        <div class="col-lg-4">
+            <img src="/images/sportIcon.png" class="img-fluid" alt="sportIcon" />
+
+            <h2>Šport</h2>
+            <p>
+                Tekmuj v ekipnih in posameznih športih in se pridobi slavo in čast.
+            </p>
+            <p><a class="btn btn-primary" href="#featureFilm">Preberi več &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <!-- third column -->
+        <div class="col-lg-4">
+            <img src="/images/movieIcon.png" class="img-fluid" alt="movieIcon" />
+
+            <h2>Filmi</h2>
+            <p>
+                Privoščite si večer gledanja celovečernih filmov v dobri družbi.
+            </p>
+            <p><a class="btn btn-primary" href="#featureFilm">Preberi več &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div id="featureDruzenja"></div>
+
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Poišči in ustvari dogodek</span>
+            </h2>
+            <p class="lead mt-4">
+                Se dolgočasiš in ne veš kaj bi počel? Poišči dogodek in se ga udeleži, če pa se v
+                nobenem ne najdes, ga ustvari kar sam!
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="/images/calendar.png" class="img-fluid" alt="calendarPicture" />
+        </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette " id="featureSport">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">
+                Te zanimajo zabave in dogodki?
+            </h2>
+            <p class="lead mt-4">
+                Pridruži se druženjem po celi Sloveniji in ustvari nove veze in poznanstva.
+            </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img src="/images/masks.png" class="img-fluid" alt="movieIcon" />
+
+        </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="featureFilm" class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Kaj pa šport in ogledi filmov?
+                </span>
+            </h2>
+            <p class="lead mt-4">
+                Mogoče pa zabave niso tvoja stvar, si pa zelo tekmovalen in se rad
+                ukvarjaš s športom ali pa uživaš v gledanju celovečernih filmov.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="/images/events/sports.png" class="img-fluid" alt="movieIcon" />
+
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->

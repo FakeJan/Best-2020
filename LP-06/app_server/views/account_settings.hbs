@@ -1,0 +1,129 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm- col-md-11 col-lg-10 col-xl-9 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-1 my-sm-5">
+        <div class="card-body p-2 p-sm-5 paddingOkoliForma">
+          <h5 class="card-title text-center mb-1 mb-xl-4 fw-light fs-5">
+            Osebni podatki
+          </h5>
+          <form id="accountSettingsForm">
+            <div class="paddingOkoliContainerja container">
+              <div class="row">
+                <div class="col-xl-4 col-12 stolpecAvatar">
+                  <div class="centerPicture">
+                    <div class="d-flex
+                      flex-column
+                      align-items-center
+                      text-center
+                      p-lg-1
+                      py-4 py-lg-3">
+                      <img class="rounded-circle mt-xl-0" width="160rem"
+                        id="accountSettingsAvatar"
+                        src="/images/profileAvatars/avatarOptions/profileAvatar{{slika}}.png"
+                        />
+                      <span class="font-weight-bold napisZamenjajSliko"
+                        id="zamenjajSliko" style="pointer-events: none;"
+                        role="button" data-bs-toggle="modal" 
+                        data-bs-target="#changePictureModal" disabled> Zamenjaj
+                        sliko </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-8 col-12">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control"
+                          id="floatingInputIme" value={{ime}} disabled />
+                        <label for="floatingInput">Ime</label>
+                        <div id="sporociloIme" class="invalid-feedback">
+                          {{!-- sporocila o ustrezno imena --}}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control"
+                          id="floatingInputPriimek" value="{{priimek}}"
+                          disabled />
+                        <label for="floatingInput">Priimek</label>
+                        <div id="sporociloPriimek" class="invalid-feedback">
+                          {{!-- sporocila o ustrezno priimka --}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control"
+                      id="floatingInputUporabniskoIme" value={{uporabniskoIme}}
+                      disabled />
+                    <label for="floatingInput">Uporabniško ime</label>
+                    <div id="sporociloUporabniskoIme" class="invalid-feedback">
+                      {{!-- sporocila o ustrezno uporabniskega imena --}}
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control"
+                      id="floatingInputEmail" value={{email}}
+                      placeholder="name@example.com" disabled />
+                    <label for="floatingInput">E-naslov</label>
+                    <div id="sporociloEmail" class="invalid-feedback">
+                      {{!-- sporocila o ustrezno emaila --}}
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control"
+                      id="floatingPasswordFirst" value={{geslo}}
+                      placeholder="Password" disabled />
+                    <label for="floatingPassword">Geslo</label>
+                    <div id="sporociloGesloFirst" class="invalid-feedback">
+                    </div>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control"
+                      id="floatingPasswordSecond" value={{geslo}}
+                      placeholder="Password" disabled />
+                    <label for="floatingPassword">Geslo</label>
+                    <div id="sporociloGesloSecond" class="invalid-feedback">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="btnSave">
+                  <button class="btn btn-primary text-uppercase fw-bold"
+                    id="gumbUrediShrani"
+                    onclick="urediShrani()">
+                    UREDI
+                  </button>
+                  <button class="btn btn-danger text-uppercase fw-bold"
+                    id="gumbPreklici"
+                    onclick="prekliciSpremembe()">
+                    PREKLIČI
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="changePictureModal"  tabindex="-1" role="dialog" aria-labelledby="changePictureModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modalDialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePictureModalLabel">Spremeni sliko</h5>
+        </div>
+        <div class="modal-body">
+          {{> selectUserAvatar paths=(folder_content "./public/images/profileAvatars/avatarOptions")}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zapri</button>
+        </div>
+      </div>
+    </div>
+  </div>

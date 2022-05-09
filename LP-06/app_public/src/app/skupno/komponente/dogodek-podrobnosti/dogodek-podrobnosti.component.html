@@ -1,0 +1,190 @@
+<div class="row">
+    <div class="border mb-2">
+        <h4 class="mb-3 mt-2"><b>Podatki o dogodku</b></h4>
+
+        <div class="mb-3">
+            <label for="title" class="float-start m-1">Ime dogodka</label>
+            <input [(ngModel)]="dogodek.title" type="text" id="title" placeholder="Ime dogodka"
+                [classList]="validated? imeDogodka.valid? 'form-control is-valid' : 'form-control is-invalid' : 'form-control'" />
+            <div id="msgTitle" class="invalid-feedback text-start p-0">
+                {{imeDogodka.message}}
+            </div>
+        </div>
+        <label for="eventImage" class="float-start m-1">Slika za prikaz
+            dogodka</label>
+        <div class="input-group mb-5">
+            <div class="img-wrapper">
+                <img class="img-responsive rounded-circle" id="eventImage" [src]="dogodek.eventImage" alt=""
+                    *ngIf="dogodek.eventImage; else defaultImage">
+                <ng-template #defaultImage>
+                    <img class="img-responsive rounded-circle" id="eventImage" src="assets/images/events/timetable.png"
+                        alt="">
+                </ng-template>
+                <div class="img-overlay">
+                    <a [class.disabled]="!jePovezava()" role="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#changePictureModal">Uredi</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="changePictureModal" tabindex="-1" role="dialog"
+            aria-labelledby="changePictureModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="changePictureModalLabel">Spremeni sliko</h5>
+                    </div>
+                    <div class="modal-body">
+                        <app-izbira-slike></app-izbira-slike>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zapri</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <label for="city" class="float-start m-1">Lokacija</label>
+        <div class="input-group mb-3 row m-1">
+            <input type="text" [(ngModel)]="dogodek.city" disabled placeholder="Kraj"
+                [classList]="validated? mestoDogodka.valid? 'form-control col-sm-auto is-valid' : 'form-control col-sm-auto is-invalid' : 'form-control col-sm-auto'"
+                id="city" name="city">
+            <div id="msgObcina" class="invalid-feedback text-start p-0">
+                {{mestoDogodka.message}}
+            </div>
+        </div>
+
+
+        <div class="input-group mb-2 row m-1">
+            <input type="text" [(ngModel)]="dogodek.address" disabled
+                [classList]="validated? naslovDogodka.valid? 'form-control col-sm-auto is-valid' : 'form-control col-sm-auto is-invalid' : 'form-control col-sm-auto'"
+                placeholder="Naslov" id="address">
+
+
+            <button [disabled]="!jePovezava()" type="button"
+                class="btn btn-primary ms-0 ms-sm-2 mt-2 mt-sm-0 col-sm-auto d-none d-sm-flex" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Izberi lokacijo
+            </button>
+
+            <div id="msgNaslov" class="invalid-feedback p-0 text-start">
+                {{naslovDogodka.message}}
+            </div>
+
+            <button [disabled]="!jePovezava()" type="button"
+                class="btn btn-primary ms-0 ms-sm-2 mt-2 mt-sm-0 col-sm-auto d-sm-none d-block" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Izberi lokacijo
+            </button>
+
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Izberi lokacijo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div id="map" style="height: 400px;"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            (click)="resetLocation()">Zapri</button>
+                        <button id="saveLocation" type="button" class="btn btn-primary" data-bs-dismiss="modal">Shrani
+                            spremembe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group mb-3">
+            <label for="description" class="float-start m-1">Opis dogodka</label>
+            <textarea [(ngModel)]="dogodek.description" id="description" rows="5"
+                [classList]="validated? opisDogodka.valid? 'form-control is-valid' : 'form-control is-invalid' : 'form-control'"
+                placeholder="Opis dogodka"></textarea>
+            <div id="msgDescription" class="invalid-feedback text-start">
+                {{opisDogodka.message}}
+            </div>
+        </div>
+
+        <label for="date" class="float-start m-1"> Pričetek dogodka</label>
+        <div class="input-group mb-3 flex-row">
+            <form [formGroup]="dogodekForm">
+                <mat-form-field appearance="fill" aria-disabled="true">
+                    <mat-label>Izberite datum</mat-label>
+                    <input id="date" matInput [matDatepicker]="date" [(ngModel)]="dogodek.date" formControlName="spadunk">
+                    <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                    <mat-datepicker #date disabled="false"></mat-datepicker>
+
+                    <mat-error *ngIf="dogodekForm.get('spadunk').hasError('dateInPast')">
+                        Datum ne sme biti v preteklosti
+                    </mat-error>
+                    <mat-error *ngIf="dogodekForm.get('spadunk').hasError('invalidDate')">
+                        Neveljaven datum
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+
+        <label for="tagInput" class="float-start m-1">Oznake dogodka</label>
+        <div class="input-group mb-3 flex-row">
+            <div>
+                <app-autocomplete [currentTags]="dogodek.tags" [allTags]="allTags" (addTagEvent)="addTag($event)"
+                    (removeTagEvent)="removeTag($event)"></app-autocomplete>
+            </div>
+        </div>
+
+
+        <h5 class="mb-3 mt-4 text-start"><b>Trenutne oznake: </b></h5>
+
+        <div class="text-start mb-3">
+            <ul id="tagsList"
+                [classList]="validated? oznakeDogodka.valid? 'chip-list is-valid' : 'chip-list is-invalid' : 'chip-list'">
+                <li *ngFor="let tag of dogodek.tags" name="tag" class="chip mb-1 me-1">
+                    {{tag}}
+                    <span (click)="removeInitialTag($event, tag)" class="closebtn">&times;</span>
+                </li>
+            </ul>
+            <div id="msgTags" class="invalid-feedback">
+                {{oznakeDogodka.message}}
+            </div>
+        </div>
+
+        <label for="limitations" class="float-start m-1">Omejitve dogodka</label>
+        <div class="mb-3 input-group" id="limitations">
+            <div class="form-check">
+                <input [checked]="omejitveDogodka && !(dogodek.participantMax == 0)"
+                    (change)="omejitveDogodka = !omejitveDogodka" id="limitedParticipants" class="form-check-input"
+                    type="checkbox">
+
+                <label class="form-check-label float-start" for="limitedParticipants">
+                    Omejeno število prijavljenih
+                </label>
+            </div>
+        </div>
+
+        <input type="number" min="1" [(ngModel)]="dogodek.participantMax"
+            [classList]="validated? maxStUdelezenihDogodka.valid? 'form-control is-valid' : 'form-control is-invalid' : 'form-control'"
+            [disabled]="!omejitveDogodka" id="participantsMax" placeholder="Maksimalno število udeleženih">
+
+
+        <div id="msgParticipantsMax" class="invalid-feedback">
+            {{maxStUdelezenihDogodka.message}}
+        </div>
+
+
+        <hr class="mb-4" />
+
+
+        <a [class.disabled]="!jePovezava()" id="createEvent" *ngIf="action=='create'"
+            class="btn btn-outline-primary btn-lg btn-block float-end mb-3" (click)="addDogodek()" role="button">Ustvari
+            dogodek</a>
+        <a [class.disabled]="!jePovezava()" id="saveEvent" *ngIf="action=='edit'"
+            class="btn btn-outline-success btn-lg btn-block float-end mb-3" role="button"
+            (click)="updateDogodek()">Shrani</a>
+    </div>
+</div>

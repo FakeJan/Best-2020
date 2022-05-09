@@ -1,0 +1,244 @@
+{
+  "contractName": "DonacijeVmesnik",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "doniranje",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "povracilo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"doniranje\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"povracilo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/DonacijeVmesnik.sol\":\"DonacijeVmesnik\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/DonacijeVmesnik.sol\":{\"keccak256\":\"0x4a1e9534256dc6c453225c84fb134a088ebede348764b5f11cd0ecce85bf5654\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bdf516f93de7d5b100986e10f3add40e85758e3ad0f31dca9cbed3859d8c5676\",\"dweb:/ipfs/QmSo1Aw75wtUHRSGUV78aqfTLZHFcAJNLZCXFXQ8uN6VYH\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.10;\r\n\r\ninterface DonacijeVmesnik { \r\n    function doniranje () payable external;\r\n    function povracilo () external;\r\n}",
+  "sourcePath": "C:\\Miha\\School\\SP\\LP-06\\app_dapp\\contracts\\DonacijeVmesnik.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/DonacijeVmesnik.sol",
+    "exportedSymbols": {
+      "DonacijeVmesnik": [
+        370
+      ]
+    },
+    "id": 371,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 363,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "DonacijeVmesnik",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 370,
+        "linearizedBaseContracts": [
+          370
+        ],
+        "name": "DonacijeVmesnik",
+        "nameLocation": "71:15:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "3dfa8ea6",
+            "id": 366,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "doniranje",
+            "nameLocation": "104:9:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 364,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "114:2:1"
+            },
+            "returnParameters": {
+              "id": 365,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "133:0:1"
+            },
+            "scope": 370,
+            "src": "95:39:1",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "32eca07e",
+            "id": 369,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "povracilo",
+            "nameLocation": "149:9:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 367,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "159:2:1"
+            },
+            "returnParameters": {
+              "id": 368,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "170:0:1"
+            },
+            "scope": 370,
+            "src": "140:31:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 371,
+        "src": "61:113:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:141:1"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/DonacijeVmesnik.sol",
+    "exportedSymbols": {
+      "DonacijeVmesnik": [
+        370
+      ]
+    },
+    "id": 371,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 363,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "DonacijeVmesnik",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 370,
+        "linearizedBaseContracts": [
+          370
+        ],
+        "name": "DonacijeVmesnik",
+        "nameLocation": "71:15:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "3dfa8ea6",
+            "id": 366,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "doniranje",
+            "nameLocation": "104:9:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 364,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "114:2:1"
+            },
+            "returnParameters": {
+              "id": 365,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "133:0:1"
+            },
+            "scope": 370,
+            "src": "95:39:1",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "32eca07e",
+            "id": 369,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "povracilo",
+            "nameLocation": "149:9:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 367,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "159:2:1"
+            },
+            "returnParameters": {
+              "id": 368,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "170:0:1"
+            },
+            "scope": 370,
+            "src": "140:31:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 371,
+        "src": "61:113:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:141:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-01-09T16:46:08.128Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

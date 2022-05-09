@@ -1,0 +1,55 @@
+.napisZamenjajSliko {
+    margin-top: 0.4rem;
+}
+
+.ustvariRacunBtn {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.paddingOkoliForma {
+    padding-bottom: 1.8rem !important;
+}
+
+.centerPicture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50% !important;
+    height: 50% !important;
+}
+
+.btnSave {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    text-align: right;
+}
+
+.paddingOkoliContainerja {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+@media screen and (min-width: 1140px) {
+    .stolpecAvatar {
+      display:flex;
+      align-items: center;
+      padding-bottom: 20%;
+    }
+}
+#gumbPreklici{
+    display:none;
+}
+
+@media screen and (min-width: 1024px) {
+    .modalDialog {
+        max-width: 600px; /* New width for default modal */
+      }
+}
+@media screen and (max-width: 300px) {
+    .modalDialog {
+        max-width: 450px; /* New width for default modal */
+        min-width: 300px; /* New width for default modal */
+      }
+}

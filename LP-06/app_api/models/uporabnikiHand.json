@@ -1,0 +1,266 @@
+[
+    {
+        "_id": {
+            "$oid": "619bd4d477f724f7b1c6efe2"
+        },
+        "ime": "Ime1",
+        "priimek": "Priimek1",
+        "uporabniskoIme": "imepriimek1",
+        "email": "imepriimek1@gmail.com",
+        "geslo": "Imepriimek1",
+        "slika": 1,
+        "created": [
+            {
+                "$oid": "619d47feaa74a5a2d40ca8d6"
+            },
+            {
+                "$oid": "619d47feaa74a5a2d40ca8d8"
+            },
+            {
+                "$oid": "619d47feaa74a5a2d40ca8da"
+            },
+            {
+                "$oid": "619d47feaa74a5a2d40ca8dc"
+            },
+            {
+                "$oid": "619d47feaa74a5a2d40ca8de"
+            },
+            {
+                "$oid": "619d476aaa74a5a2d40ca8d6"
+            },
+            {
+                "$oid": "619d47aaaa74a5a2d40ca8d8"
+            },
+            {
+                "$oid": "61a242ece9efa3b8ec6f1719"
+            },
+            {
+                "$oid": "61a26530651097e5537b7231"
+            },
+            {
+                "$oid": "61a266e0607c838c00b709f5"
+            },
+            {
+                "$oid": "61a26795607c838c00b709fd"
+            }
+        ],
+        "joined": [
+            {
+                "$oid": "6195807952ce72ce8fe9f096"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f091"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f092"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f090"
+            },
+            {
+                "$oid": "61a26ab9936c2224f9312806"
+            },
+            {
+                "$oid": "61a268f0936c2224f93127de"
+            },
+            {
+                "$oid": "61a26a28936c2224f93127f6"
+            }
+        ],
+		"tip": "navaden",
+		"nakljucnaVrednost": "b7ff2f391322d1b62b3f1ff588df191d",
+        "zgoscenaVrednost": "a382915dcc8496901987999e2e136cf923bb9a7dfe2211ffeaead2980be0b1a942cb5455546c6c874464cd98d1c55594519116829d3450c25c826c9e34842e8c"
+    },
+    {
+        "_id": {
+            "$oid": "619bd4d477f724f7b1c6efe3"
+        },
+        "ime": "Ime2",
+        "priimek": "Priimek2",
+        "uporabniskoIme": "imepriimek2",
+        "email": "imepriimek2@gmail.com",
+        "geslo": "Imepriimek2",
+        "slika": 2,
+        "created": [
+            {
+                "$oid": "61a26835607c838c00b70a09"
+            }
+        ],
+        "joined": [
+            {
+                "$oid": "6195807952ce72ce8fe9f090"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f091"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f092"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f093"
+            },
+            {
+                "$oid": "61a26ab9936c2224f9312806"
+            },
+            {
+                "$oid": "61a268f0936c2224f93127de"
+            },
+            {
+                "$oid": "61a26a28936c2224f93127f6"
+            },
+            {
+                "$oid": "61a26530651097e5537b7231"
+            }
+        ],
+		"tip": "navaden",
+		"nakljucnaVrednost": "b7ff2f391322d1b62b3f1ff588df191d",
+        "zgoscenaVrednost": "a382915dcc8496901987999e2e136cf923bb9a7dfe2211ffeaead2980be0b1a942cb5455546c6c874464cd98d1c55594519116829d3450c25c826c9e34842e8c"
+    },
+    {
+        "_id": {
+            "$oid": "619bd4d477f724f7b1c6efe4"
+        },
+        "ime": "Ime3",
+        "priimek": "Priimek3",
+        "uporabniskoIme": "imepriimek3",
+        "email": "imepriimek3@gmail.com",
+        "geslo": "Imepriimek3",
+        "slika": 3,
+        "created": [
+            {
+                "$oid": "61a268f0936c2224f93127de"
+            }
+        ],
+        "joined": [
+            {
+                "$oid": "6195807952ce72ce8fe9f096"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f097"
+            },
+            {
+                "$oid": "61a26ab9936c2224f9312806"
+            },
+            {
+                "$oid": "61a26a6b936c2224f93127fe"
+            },
+            {
+                "$oid": "61a26bcbe9abeeccc3477d2f"
+            },
+            {
+                "$oid": "61a269a5936c2224f93127ea"
+            }
+        ],
+		"tip": "navaden",
+		"nakljucnaVrednost": "b7ff2f391322d1b62b3f1ff588df191d",
+        "zgoscenaVrednost": "a382915dcc8496901987999e2e136cf923bb9a7dfe2211ffeaead2980be0b1a942cb5455546c6c874464cd98d1c55594519116829d3450c25c826c9e34842e8c"
+    },
+    {
+        "_id": {
+            "$oid": "619bd4d477f724f7b1c6efe5"
+        },
+        "ime": "Ime4",
+        "priimek": "Priimek4",
+        "uporabniskoIme": "imepriimek4",
+        "email": "imepriimek4@gmail.com",
+        "geslo": "Imepriimek4",
+        "slika": 4,
+        "created": [
+            {
+                "$oid": "61a269a5936c2224f93127ea"
+            }
+        ],
+        "joined": [
+            {
+                "$oid": "6195807952ce72ce8fe9f097"
+            },
+            {
+                "$oid": "61a26a6b936c2224f93127fe"
+            },
+            {
+                "$oid": "61a26bcbe9abeeccc3477d2f"
+            },
+            {
+                "$oid": "61a26835607c838c00b70a09"
+            },
+            {
+                "$oid": "61a26795607c838c00b709fd"
+            },
+            {
+                "$oid": "61a266e0607c838c00b709f5"
+            },
+            {
+                "$oid": "61a26530651097e5537b7231"
+            }
+        ],
+		"tip": "navaden",
+		"nakljucnaVrednost": "b7ff2f391322d1b62b3f1ff588df191d",
+        "zgoscenaVrednost": "a382915dcc8496901987999e2e136cf923bb9a7dfe2211ffeaead2980be0b1a942cb5455546c6c874464cd98d1c55594519116829d3450c25c826c9e34842e8c"
+    },
+    {
+        "_id": {
+            "$oid": "619bd4d477f724f7b1c6efe6"
+        },
+        "ime": "Ime5",
+        "priimek": "Priimek5",
+        "uporabniskoIme": "imepriimek5",
+        "email": "imepriimek5@gmail.com",
+        "geslo": "Imepriimek5",
+        "slika": 5,
+        "created": [
+            {
+                "$oid": "6195807952ce72ce8fe9f090"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f091"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f092"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f093"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f094"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f095"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f096"
+            },
+            {
+                "$oid": "6195807952ce72ce8fe9f097"
+            },
+            {
+                "$oid": "61a25002c9d7b0a58f8c6471"
+            },
+            {
+                "$oid": "61a26a28936c2224f93127f6"
+            },
+            {
+                "$oid": "61a26a6b936c2224f93127fe"
+            },
+            {
+                "$oid": "61a26ab9936c2224f9312806"
+            },
+            {
+                "$oid": "61a26bcbe9abeeccc3477d2f"
+            }
+        ],
+        "joined": [
+            {
+                "$oid": "61a269a5936c2224f93127ea"
+            },
+            {
+                "$oid": "61a266e0607c838c00b709f5"
+            },
+            {
+                "$oid": "61a26835607c838c00b70a09"
+            }
+        ],
+		"tip": "navaden",
+		"nakljucnaVrednost": "b7ff2f391322d1b62b3f1ff588df191d",
+        "zgoscenaVrednost": "a382915dcc8496901987999e2e136cf923bb9a7dfe2211ffeaead2980be0b1a942cb5455546c6c874464cd98d1c55594519116829d3450c25c826c9e34842e8c"
+    }
+]

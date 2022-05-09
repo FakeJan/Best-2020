@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="sl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/osebniPodatki.css">
+    <title>Nastavitve</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand mt-2 mt-lg-0" href="mainpage.html">
+                <img src="../assets/images/GoodMeetsLogo.png" class="img-fluid" alt="Logo" />
+            </a>
+
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-body active" href="joined_events.html">Moji dogodki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body active" href="event_chat.html">Klepet</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dropdown ">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Lojze Novak
+                    <img src="../assets/images/avatar.jpg" alt="Profile picture" width="32" height="32"
+                        class="rounded-circle" style="margin-left: 0.5em;">
+
+                </a>
+                <ul class="dropdown-menu w-100 text-small" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="joined_events.html">
+                            Moji dogodki</a></li>
+                    <li><a class="dropdown-item" href="account_Settings.html">Nastavitve</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="homepage.html">Izpis</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav> -->
+<!-- ./Navigation -->
+
+<!-- <form>
+        <input type="file" id="myFile" name="filename">
+        <input type="submit">
+    </form> -->
+
+<div class="container mt-3">
+<div class="row">
+  <div class="col-sm- col-md-11 col-lg-10 col-xl-9 mx-auto">
+    <div class="card border-0 shadow rounded-3 my-1 my-sm-5">
+      <div class="card-body p-2 p-sm-5 paddingOkoliForma">
+        <h5 class="card-title text-center mb-1 mb-xl-4 fw-light fs-5">
+          Osebni podatki
+        </h5>
+        <form>
+          <div class="paddingOkoliContainerja container">
+            <div class="row">
+              <div class="col-xl-4 col-12">
+                <div class="centerPicture">
+                  <div
+                    class="
+                      d-flex
+                      flex-column
+                      align-items-center
+                      text-center
+                      p-lg-1
+                      py-4 py-lg-3
+                    "
+                  >
+                    <img
+                      class="rounded-circle mt-xl-0"
+                      width="160rem"
+                      src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                    />
+                    <span class="font-weight-bold">Zamenjaj sliko </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8 col-12">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="floatingInput"
+                        value="Lojze"
+                        disabled
+                      />
+                      <label for="floatingInput">Ime</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="floatingInput"
+                        value="Novak"
+                        disabled
+                      />
+                      <label for="floatingInput">Priimek</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    value="Lojze123"
+                    disabled
+                  />
+                  <label for="floatingInput">Uporabniško ime</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    value="lojze.novak@gmail.com"
+                    placeholder="name@example.com"
+                    disabled
+                  />
+                  <label for="floatingInput">E-naslov</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    value="janezjanez"
+                    placeholder="Password"
+                    disabled
+                  />
+                  <label for="floatingPassword">Geslo</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btnSave">
+                <button
+                  class="btn btn-primary text-uppercase fw-bold"
+                  type="submit"
+                >
+                  UREDI / SHRANI
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p "
+        crossorigin="anonymous "></script>
+</body>
+
+</html> 
+</div>

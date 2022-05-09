@@ -1,0 +1,7 @@
+<div class="container mt-3">
+    <div class="row m-0">
+        <div *ngIf="dogodki" class="col">
+            <app-seznam-dogodkov [dogodki]="dogodki" [page]="'admin'" [totalEvents]="totalEvents" [pageSize]="pageSize"></app-seznam-dogodkov>
+        </div>
+    </div>
+</div>

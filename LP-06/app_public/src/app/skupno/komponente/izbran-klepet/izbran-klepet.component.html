@@ -1,0 +1,87 @@
+<div class="chat">
+    <div class="chat-header clearfix m-0 border-bottom">
+        <button class="btn btn-outline-secondary d-md-none" data-bs-toggle="collapse"
+            data-bs-target="#main-sidebar-container" aria-controls="main-sidebar-container"
+            onclick="openNav()" style="float: left; margin-left: 10px; margin-right: 5px;"><i
+                class="fas fa-bars"></i></button>
+        <h1 class="m-3 text-black float-st center" style="height: 2.7rem;">
+            {{izbranPogovor.dogodekId.title}}
+        </h1>
+
+        <ng-template #niPogovora>
+            <h1 class="m-3 text-black float-st center" style="height: 2.7rem;">
+                Ni izbranega pogovora
+            </h1>
+        </ng-template>
+
+    </div>
+
+    <div class="chat-history" #scrollMe>
+
+        <ul class="m-b-0" *ngFor="let sporocilo of izbranPogovor.sporocila">
+            <li class="clearfix">
+                <div [className]="myMsg(sporocilo.userId._id) ? 'message-data text-end' : 'message-data'"
+                    *ngIf="myMsg(sporocilo.userId._id); else notMyMsg">
+
+                    <span class="message-data-time"><small>{{sporocilo.userId.uporabniskoIme}}
+                            {{sporocilo.datum | dateFormate}} </small></span>
+                    <img src="assets/images/profileAvatars/avatarOptions/profileAvatar{{sporocilo.userId.slika}}.png"
+                        alt="avatar" />
+                </div>
+
+                <ng-template #notMyMsg>
+                    <div
+                        [className]="myMsg(sporocilo.userId._id) ? 'message-data text-end' : 'message-data'">
+
+                        <img src="assets/images/profileAvatars/avatarOptions/profileAvatar{{sporocilo.userId.slika}}.png"
+                            alt="avatar" />
+                        <span class="message-data-time"><small>{{sporocilo.userId.uporabniskoIme}}
+                                {{sporocilo.datum | dateFormate}}</small></span>
+                    </div>
+                </ng-template>
+
+                <div [className]="myMsg(sporocilo.userId._id) ? 'message other-message float-end' : 'message my-message'"
+                    *ngIf="myMsg(sporocilo.userId._id); else brezDelete">
+                    {{sporocilo.vsebina}}
+                    <!-- <i class="fas fa-trash-alt text-secondary"></i> -->
+                    <a role="button" (click)="deleteMessage(izbranPogovor._id, sporocilo._id)">
+                        <i class="fas fa-trash-alt text-secondary"></i>
+                    </a>
+                </div>
+
+                <ng-template #brezDelete>
+                    <div
+                        [className]="myMsg(sporocilo.userId._id) ? 'message other-message float-end' : 'message my-message'">
+                        {{sporocilo.vsebina}}
+                    </div>
+                </ng-template>
+
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #niSelectedChata>
+        <div class="chat-history">
+
+        </div>
+    </ng-template>
+
+
+    <hr class="m-0" />
+    <div class="chat-message">
+        <form id="myForm" (ngSubmit)="addMessage(izbranPogovor._id)" autocomplete="off">
+            <div class="input-group row m-0 p-0">
+                <input id="chatMessage" type="text" class="form-control" placeholder="Vnesite besedilo..."
+                    [(ngModel)]="novoSporocilo.vsebina" name="chatMsg" #chatMsg />
+
+                <button type="submit"
+                    class="ms-2 p-0 col-auto col-sm-auto text-primary align-self-center float-end btn shadow-none"
+                    (click)="chatMsg.value = ''">
+                    <i class="fas fa-paper-plane fa-lg "></i>
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

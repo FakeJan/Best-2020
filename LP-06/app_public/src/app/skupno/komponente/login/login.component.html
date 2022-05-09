@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 col-xl-4 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-1 my-sm-5">
+        <div class="card-body p-4 p-sm-5">
+          <div class="naslovInLogo w-100 p-3">
+            <a routerLink="/"><img src="assets/images/GoodMeetsLogo.png" alt="GoodMeetsLogo" /></a>
+            <div class="h3">Prijava</div>
+          </div>
+          <form (ngSubmit)="preveriPrijavo()" autocomplete="{{autocompleteOption}}">
+
+            <div class="form-floating mb-3">
+
+              <input [(ngModel)]="prijava.email" (ngModelChange)="preveriEmail()" name="email"
+                [className]="emailSpremenjen ? (emailUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'"
+                type="email" autocomplete="{{autocompleteOption}}"/>
+              <label for="email">E-naslov</label>
+
+              <div *ngIf="!emailUstrezno && emailSpremenjen" class="invalid-feedback">
+                {{emailSporocilo}}
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+
+              <input [(ngModel)]="prijava.geslo" (ngModelChange)="preveriGeslo()" name="geslo" type="password"
+              autocomplete="{{autocompleteOption}}" [className]="gesloSpremenjeno ? (gesloUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'" />
+              <label for="floatingPassword">Geslo</label>
+
+              <div *ngIf="!gesloUstrezno && gesloSpremenjeno" class="invalid-feedback">
+                {{gesloSporocilo}}
+              </div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" (change)="changeAutocomplete()" [checked]="zapomniSe" />
+              <label class="form-check-label" for="rememberPasswordCheck">
+                Zapomni se me
+              </label>
+            </div>
+
+            <div class="d-grid">
+              <button [disabled]="!jePovezava()" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
+                Prijavi se
+              </button>
+              <p class="mt-3">
+                Še nimaš računa?
+                <a class="text-decoration-none" routerLink="/signup">Registriraj se</a>
+              </p>
+            </div>
+
+            <!-- <div class="d-flex align-items-center my-1">
+              <div class="col-5">
+                <hr />
+              </div>
+              <div class="col-2">
+                <p class="text-center mb-0 opacity-50">ALI</p>
+              </div>
+              <div class="col-5">
+                <hr />
+              </div>
+            </div>
+            <div class="
+                mt-3
+                d-flex
+                flex-row
+                align-items-center
+                justify-content-lg-start
+              ">
+              <p class="lead fw-normal mb-1 me-3">Prijava z</p>
+              <button type="button" style="background-color: #3b5998"
+                class="socialMediaBtn btn btn-primary btn-floating mx-1">
+                <i class="bi bi-facebook"></i>
+              </button>
+
+              <button type="button" style="background-color: #db4437"
+                class="socialMediaBtn btn btn-primary btn-floating mx-2">
+                <i class="bi bi-google"></i>
+              </button>
+
+              <button type="button " style="background-color: #00acee"
+                class="socialMediaBtn btn btn-primary btn-floating mx-1">
+                <i class="bi bi-twitter"></i>
+              </button>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand mt-lg-0" routerLink="">
+            <img src="assets/images/GoodMeetsLogo.png" class="img-fluid" alt="Logo" />
+        </a>
+
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mt-2" id="navbarSupportedContent">
+            <ul class="navbar-nav" *ngIf="isHomeRoute()">
+                <li class="nav-item">
+                    <a class="nav-link text-body" [routerLink]="" (click)="goDown()">Kategorije</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-body" routerLink="/dogodki_gost">Dogodki</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex align-items-center">
+            <i class="fas fa-exclamation-triangle text-danger me-2" *ngIf="!jePovezava()"></i>
+            <a class="btn btn-outline-primary event-side-button me-2" routerLink="/login" role="button">Prijava</a>
+            <a class="btn btn-primary event-side-button me-2" routerLink="/signup" role="button">Registracija</a>
+        </div>
+    </div>
+</nav>
+<!-- ./Navigation -->

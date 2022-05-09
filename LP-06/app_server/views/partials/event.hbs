@@ -1,0 +1,117 @@
+<div class="row">
+  <div class="card event">
+    <div class="row no-gutters">
+      <div class="col-md-3">
+        <img class="stock-image d-none d-md-block" src="{{event.eventImage}}" class="img-fluid" />
+      </div>
+
+      <div class="col-md-6 event-body">
+        <div class="card-body">
+          <h5 class="card-title">{{event.title}}</h5>
+          <p class="card-text"><b>Čas dogodka: </b>{{{date_formatter
+            event.date
+            }}}</p>
+          <p class="card-text"><b>Kraj dogodka:
+            </b>{{event.address}},
+            {{event.city}}</p>
+          <p class="card-text d-md-none"><b>Vremenska napoved:
+            </b><span id="weather"></span></i></p>
+          <input type="hidden" id="lon" value={{event.coordinates.[0]}}><input type="hidden" id="lat"
+            value={{event.coordinates.[1]}}>
+          <div class="chip-div">
+            <ul class="chip-list">
+              {{#each event.tags as |tag|}}
+              <li class="chip">
+                {{tag}}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          <a class="btn btn-success text-success border-0 mt-2 p-0 bg-transparent" data-bs-target="#a{{event._id}}"
+            data-bs-toggle="collapse" aria-expanded="true" aria-controls="eventItem">Več
+            <i class="fas fa-angle-down"></i>
+          </a>
+        </div>
+        <div id="a{{event._id}}" class="collapse" aria-labelledby="headingOne">
+          <div class="card-body">
+            {{event.description}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 event-side pt-0 pt-md-3 p-3 m-0 bottom-0">
+        <p class="m-0 mt-2 mt-md-0"><b>Število oseb:
+          </b>{{event.users.length}}{{#if_condition
+          event.participantMax
+          0
+          }}{{else}}/{{event.participantMax}}{{/if_condition}}
+          <i class="fas fa-user-friends me-2"></i>
+          {{#if user}}
+          {{#array_includes (json user.joined) event._id}}
+          <a type="button" onclick="openChat('{{event._id}}')">
+            <i class="bi bi-chat-left-dots fa-lg mt-2" style="color: black;"></i>
+          </a>
+          {{else}}
+          {{#array_includes (json user.created) event._id}}
+          <a type="button" onclick="openChat('{{event._id}}')">
+            <i class="bi bi-chat-left-dots fa-lg mt-2" style="color: black;"></i>
+          </a>
+          {{/array_includes}}
+          {{/array_includes}}
+          {{else}}
+          {{#if joinedEvents}}
+          <a type="button" onclick="openChat('{{event._id}}')">
+            <i class="bi bi-chat-left-dots fa-lg mt-2" style="color: black;"></i>
+          </a>
+          {{else if createdEvents}}
+          <a type="button" onclick="openChat('{{event._id}}')">
+            <i class="bi bi-chat-left-dots fa-lg mt-2" style="color: black;"></i>
+          </a>
+          {{/if}}
+          {{/if}}
+        </p>
+        <img class="weather d-none d-md-block" src="" alt="" class="img-fluid" />
+        {{#if joinedEvents}}
+        <div class="joined-event-side">
+          <button type="button" class="btn btn-success event-side-button mt-2 mt-md-0">Doniraj</button>
+          <button type="button" onclick="leaveEvent('{{event._id}}')"
+            class="btn btn-danger event-side-button ms-2 mt-2 mt-xxl-0">Odjavi se</button>
+        </div>
+        {{else if createdEvents}}
+        <div class="joined-event-side">
+          <a class="btn btn-primary event-side-button mt-2 mt-xxl-0" role="button"
+            href="../edit_event/{{event._id}}">Uredi</a>
+          <button type="button" onclick="deleteEvent('{{event._id}}')"
+            class="btn btn-danger event-side-button delete-button ms-2 mt-2 mt-xxl-0">Izbriši
+          </button>
+        </div>
+        {{else}}
+        <div name="eventSideButtons" class="joined-event-side">
+          {{#unless user}}
+          <button type="submit" onclick="joinEvent('{{event._id}}')" class="btn btn-success event-side-button">Pridruži
+            se</button>
+          {{else}}
+          {{#array_includes (json user.joined) event._id}}
+          <button type="button" class="btn btn-success event-side-button mt-2 mt-md-0">Doniraj</button>
+          <button type="button" onclick="leaveEvent('{{event._id}}')"
+            class="btn btn-danger event-side-button ms-2 mt-2 mt-xxl-0">Odjavi se</button>
+          {{else}}
+          {{#array_includes (json user.created) event._id}}
+          <a class="btn btn-primary event-side-button mt-2 mt-xxl-0" role="button"
+            href="../edit_event/{{event._id}}">Uredi</a>
+          <button type="button" onclick="deleteEvent('{{event._id}}')"
+            class="btn btn-danger event-side-button delete-button ms-2 mt-2 mt-xxl-0">Izbriši
+          </button>
+          {{else}}
+          <button type="submit" onclick="joinEvent('{{event._id}}')" class="btn btn-success event-side-button">Pridruži
+            se</button>
+          {{/array_includes}}
+          {{/array_includes}}
+          {{/unless}}
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

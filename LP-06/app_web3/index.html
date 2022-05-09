@@ -1,0 +1,260 @@
+<html lang="sl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./neki.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Donacije</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" style="cursor:
+            pointer;" *ngIf="isHomeRoute()" [routerLink]="['dogodki']">
+                <img src="/images/GoodMeetsLogo.png" class="img-fluid" alt="Logo" />
+            </a>
+    
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse  mt-2" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-body active" style="cursor: pointer;" id="myEventsNav"
+                            routerLink="pridruzeni_dogodki">Moji dogodki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body active" role="button" routerLink="klepet">Klepet</a>
+                    </li>
+                </ul>
+            </div>   
+        </div>
+    </nav>
+    
+    <main>
+      <div class="container-fluid mt-2">
+        <h1>Donacije</h1>
+
+        <div class="row row-cols-2 mt-4">
+          <div class="col">
+            <div class="card lg-mt-6">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  Trenutni status<sup
+                    ><small class="text-muted"
+                      ><i class="far fa-user ps-2 pe-1"></i></small
+                  ></sup>
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div class="justify-content-center text-center" id="korak1">
+                    <span class="badge rounded-pill bg-light text-muted korak"
+                      ><i class="fas fa-check-circle"></i></span
+                    >
+                    <div class="text-muted">Aktiven</div>
+                  </div>
+                  <div class="justify-content-center text-center" id="korak2">
+                    <span class="badge rounded-pill bg-light text-muted korak"
+                      ><i class="fas fa-square"></i></span
+                    >
+                    <div class="text-muted">Koncan</div>
+                  </div>
+                  <div class="justify-content-center text-center" id="korak3">
+                    <span class="badge rounded-pill bg-light text-muted korak"
+                      ><i class="fas fa-times"></i></span
+                    >
+                    <div class="text-muted">Preklican</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer small text-muted">
+                <i class="fas fa-info-circle pe-1"></i>Trenutni status dogodka,
+                ki je na voljo vsem uporabnikom.
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  Seznam prijavljenih<sup
+                    ><small class="text-muted"
+                      ><i class="far fa-user ps-2 pe-1"></i></small
+                  ></sup>
+                </h4>
+              </div>
+              <div class="card-body" id="seznamPrijavljenih">
+                Seznam prijavljenih je prazen.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-cols-2 mt-4">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  Donacija<sup><small class="text-muted"><i class="fas fa-user-plus ps-2 pe-1"></i></small></sup>
+                </h4>
+              </div>
+              <div class="card-body">
+                <div id="niPrijavljenError" class="alert alert-light" role="alert">
+                  Donira lahko samo prijavljen uporabnik
+                </div>
+                <div class="mb-3">
+                  <label for="naslovVolivca" class="form-label"
+                    >Količina</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    id="donacijaKolicina"
+                  />
+                </div>
+                <button
+                  id="gumbOddajDonacijo"
+                  onclick="oddajDonacijo()"
+                  class="btn btn-sm btn-success"
+                >
+                  Doniraj
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seznam volivcev -->
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  Seznam donacij<sup
+                    ><small class="text-muted"
+                      ><i class="far fa-user ps-2 pe-1"></i></small
+                  ></sup>
+                </h4>
+              </div>
+              <div class="card-body" id="seznamDonatorjev">
+                Seznam donatorjev je prazen.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sprejemanje predlogov, oddaja predloga za glasovanje in seznam predlogov -->
+        <div class="row row-cols-3 mt-4">
+          <!-- Sprejemanje predlogov -->
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  Končanje dogodka<sup
+                    ><small class="text-muted"
+                      ><i class="fas fa-user-cog ps-2 pe-1"></i></small
+                  ></sup>
+                </h4>
+              </div>
+              <div class="card-body">
+                <div id="koncajError" class="alert alert-light" role="alert">
+                  To akcijo lahko izvede samo lastnik
+                </div>
+                <button
+                  id="koncajDogodek"
+                  onclick="koncajDogodek('koncaj')"
+                  class="btn btn-sm btn-success me-2"
+                >
+                  <i class="fas fa-pause me-2"></i>Končaj</button
+                ><button
+                  id="prekliciDogodek"
+                  onclick="koncajDogodek('preklici')"
+                  class="btn btn-sm btn-danger"
+                >
+                  <i class="fas fa-times me-2"></i>Prekliči
+                </button>
+              </div>
+              <div class="card-footer small text-muted">
+                <i class="fas fa-info-circle pe-1"></i>Lastnik konča ali prekliče dogodek pred njegovo izvedbo.
+              </div>
+            </div>
+          </div>
+          <!-- Oddaja predloga za glasovanje -->
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  Prijava na dogodek<sup
+                    ><small class="text-muted"
+                      ><i class="fas fa-user-plus ps-2 pe-1"></i></small
+                  ></sup>
+                </h4>
+              </div>
+              <div class="card-body">
+                <div id="prijavaError" class="alert alert-light" role="alert">
+                  Uporabnik je že prijavljen
+                </div>
+                <button
+                  id="prijavaNaDogodek"
+                  onclick="prijavaNaDogodek()"
+                  class="btn btn-sm btn-success"
+                >
+                  <i class="fas fa-plus me-2"></i>Prijavi se
+                </button>
+              </div>
+              <div class="card-footer small text-muted">
+                <i class="fas fa-info-circle pe-1"></i>Prijava uporabnika na dogodek.
+              </div>
+            </div>
+          </div>
+          <!-- Seznam predlogov -->
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  Povračilo<sup><small class="text-muted"><i class="fas fa-user-plus ps-2 pe-1"></i></small></sup>
+                </h4>
+              </div>
+              <div class="card-body" id="povraciloDiv">
+                <div id="povraciloPrijavljenError" class="alert alert-light" role="alert">
+                  Povracilo lahko zahteva samo prijavljen uporabnik
+                </div>
+                <div id="povraciloError" class="alert alert-light" role="alert">
+                  Vse vaše donacije so povrnjene
+                </div>
+                <button
+                  id="povracilo"
+                  onclick="povracilo()"
+                  class="btn btn-sm btn-success"
+                >
+                  <i class="fas fa-plus me-2"></i>Povračilo
+                </button>
+              </div>
+              <div class="card-footer small text-muted">
+                <i class="fas fa-info-circle pe-1"></i>Povračilo v primeru da je dogodek preklican.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="mt-5">
+          <div class="row">
+            <div class="col-12">
+              <small>&copy; Spletno programiranje</small>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/javascripts/truffle-contract.min.js"></script>
+    <script src="/javascripts/web3.min.js"></script>
+    <script src="/web3/code.js"></script>
+  </body>
+</html>

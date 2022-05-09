@@ -1,0 +1,86 @@
+<!-- <div class="container"> -->
+<div class="row">
+  <div class="col-sm-9 col-md-7 col-lg-5 col-xl-4 mx-auto">
+    <div class="card border-0 shadow rounded-3 my-2 my-sm-5">
+      <div class="card-body p-4 p-sm-5 paddingOkoliForma">
+        <div class="naslovInLogo w-100 p-3">
+          <a href="/"><img src="/images/GoodMeetsLogo.png" alt="GoodMeetsLogo" /></a>
+          <div class="h3">Registracija</div>
+        </div>
+        <form id="registracijaForm">
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control inputRegistration" id="floatingInputIme"
+                  placeholder="name@example.com" />
+                <label for="floatingInput">Ime</label>
+                <div id="sporociloIme" class="invalid-feedback">
+                  {{!-- sporocila o ustrezno imena --}}
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control inputRegistration" id="floatingInputPriimek"
+                  placeholder="name@example.com" />
+                <label for="floatingInput">Priimek</label>
+                <div id="sporociloPriimek" class="invalid-feedback">
+                  {{!-- sporocila o ustrezno priimka --}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control inputRegistration" id="floatingInputUporabniskoIme"
+              placeholder="name@example.com" />
+            <label for="floatingInput">Uporabniško ime</label>
+            <div id="sporociloUporabniskoIme" class="invalid-feedback">
+              {{!-- sporocila o ustrezno uporabniskega imena --}}
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" />
+            <label for="floatingInput">E-naslov</label>
+            <div id="sporociloEmail" class="invalid-feedback">
+              {{!-- sporocila o ustrezno emaila --}}
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPasswordFirst" placeholder="Password" />
+            <label for="floatingPassword">Geslo</label>
+            <div id="sporociloGesloFirst" class="invalid-feedback">
+              {{!-- sporocila o ustrezno gesla --}}
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPasswordSecond" placeholder="Password" />
+            <label for="floatingPassword">Potrditev gesla</label>
+            <div id="sporociloGesloSecond" class="invalid-feedback">
+              {{!-- sporocila o ustrezno ponovnega gesla --}}
+            </div>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="posliEmailPotrdilo" />
+            <label class="form-check-label" for="posliEmailPotrdilo">
+              Pošlji email ob uspešni registraciji
+            </label>
+          </div>
+          <div class="d-grid">
+            <button class="
+                ustvariRacunBtn
+                btn btn-primary btn-login
+                text-uppercase
+                fw-bold"
+              type="submit">
+              USTVARI RAČUN
+            </button>
+            <p class="napisPodPrijavo">
+              Že imaš račun?
+              <a class="text-decoration-none" href="login">Prijavi se</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+@media (max-width: 540px) {
+    #navSearchAdmin {
+      width: 100% !important;
+    }
+  }
+
+@media (min-width: 1024px) {
+  #navSearchAdmin {
+    width: 30% !important;
+  }
+}
+#navSearchAdmin{
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}

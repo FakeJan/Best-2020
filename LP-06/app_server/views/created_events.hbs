@@ -1,0 +1,43 @@
+<div class="container mt-3">
+  <div class="row m-0">
+    {{> sidenav}}
+
+    <!-- mainfunction -->
+    <div class="col-lg-9 col-md-12">
+      <div class="row mb-2 bg-light pt-2 pb-2">
+        <div class="col-12 col-sm-6 mb-2 mb-sm-0">
+          {{> sort}}
+        </div>
+        <div class="col-12 col-sm-6 ">
+          {{> search}}
+        </div>
+      </div>
+
+      <div class="d-none" id="noEvents">
+        <h1>Ni dogodkov</h1>
+      </div>
+      {{#if_condition events.length 0}}
+      <div>
+        <h1>Ni dogodkov</h1>
+      </div>
+      {{else}}
+      <div id="neki">
+        {{#each events as |event|}}
+        {{> event event=event createdEvents=../createdEvents}}
+        {{/each}}
+      </div>
+      {{/if_condition}}
+    </div>
+
+  </div>
+  <!-- /mainfunction -->
+  {{> footer}}
+
+  <div class="nav m-3">
+    <a href="../create_event" class="nav-link link-dark add-event-float">
+      <div class="far fa-calendar-plus"></div>
+      <div class="">Dodaj dogodek</div>
+    </a>
+  </div>
+</div>
+</div>

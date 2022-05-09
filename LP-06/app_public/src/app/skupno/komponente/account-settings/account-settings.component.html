@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm- col-md-11 col-lg-10 col-xl-9 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-1 my-sm-4">
+        <div class="card-body p-2 p-sm-5 pb-2">
+          <h5 class="card-title text-center mb-1 mb-xl-4 fw-light fs-5">
+            Osebni podatki
+          </h5>
+          <form>
+            <div class="paddingOkoliContainerja container">
+              <div class="row">
+                <div class="col-xl-4 col-12 stolpecAvatar">
+                  <div class="centerPicture">
+                    <div class="d-flex
+                      flex-column
+                      align-items-center
+                      text-center
+                      p-lg-1
+                      py-4 py-lg-3">
+                      <img class="rounded-circle mt-xl-0" width="160rem"
+                        id="accountSettingsAvatar"
+                        src="assets/images/profileAvatars/avatarOptions/profileAvatar{{uporabnik.slika}}.png"
+                        />
+                      <button class="btn btn-primary mt-2"
+                        role="button" data-bs-toggle="modal"
+                        data-bs-target="#changePictureModal" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve"> SPREMENI</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-8 col-12">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-floating mb-3">
+                        <input type="text" [className]="imeSpremenjeno ? (imeUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'"
+                        [(ngModel)]="uporabnik.ime" value={{uporabnik.ime}} name="ime" (ngModelChange)="preveriIme()" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve" />
+                        <label>Ime</label>
+                        <div *ngIf="!imeUstrezno && imeSpremenjeno" class="invalid-feedback">
+                          Neveljavno ime!
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-floating mb-3">
+                        <input type="text" [className]="priimekSpremenjen ? (priimekUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'"
+                        [(ngModel)]="uporabnik.priimek" (ngModelChange)="preveriPriimek()" name="priimek" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve" />
+                        <label>Priimek</label>
+                        <div *ngIf="!priimekUstrezno && priimekSpremenjen" class="invalid-feedback">
+                          Neveljaven priimek!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" [className]="uporabniskoImeSpremenjeno ? (uporabniskoImeUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'"
+                    [(ngModel)]="uporabnik.uporabniskoIme" (ngModelChange)="preveriUporabniskoIme()" name="uporabniskoIme" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve" />
+                    <label>Uporabniško ime</label>
+                    <div *ngIf="!uporabniskoImeUstrezno && uporabniskoImeSpremenjeno" class="invalid-feedback">
+                      {{uporabniskoImeSporocilo}}
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" [className]="emailSpremenjen ? (emailUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'"
+                    [(ngModel)]="uporabnik.email" (ngModelChange)="preveriEmail()" name="email" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve" />
+                    <label>E-naslov</label>
+                    <div *ngIf="!emailUstrezno && emailSpremenjen" class="invalid-feedback">
+                      {{emailSporocilo}}
+                    </div>
+                  </div>
+
+                  <input class="form-check-input mb-3" type="checkbox" (change)="spremeniGesloChange()" [checked]="spremeniGeslo" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve" />
+                  <label class="form-check-label mx-1" for="posliEmailPotrdilo">
+                    Spremeni geslo
+                  </label>
+                  <div class="form-floating mb-3">
+                    <input type="password"  [className]="prvoGesloSpremenjeno ? (prvoGesloUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'"
+                    [(ngModel)]="prvoGeslo" (ngModelChange)="preveriPrvoGeslo()" name="prvoGeslo" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve || !spremeniGeslo" />
+                    <label>Novo geslo</label>
+                    <div *ngIf="!prvoGesloUstrezno&& prvoGesloSpremenjeno" class="invalid-feedback">
+                      {{prvoGesloSporocilo}}
+                    </div>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="password" [className]="drugoGesloSpremenjeno ? (gesloUstrezno ? 'form-control is-valid' : 'form-control is-invalid') : 'form-control'"
+                    [(ngModel)]="drugoGeslo" (ngModelChange)="preveriDrugoGeslo()" name="drugoGeslo" [disabled]="vnosOnemogocen||odstevanjeDoPosodobitve || !spremeniGeslo" />
+                    <label>Potrditev novega gesla</label>
+                    <div *ngIf="!gesloUstrezno&& drugoGesloSpremenjeno" class="invalid-feedback">
+                      {{drugoGesloSporocilo}}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="btnSave">
+                  <button *ngIf="!odstevanjeDoPosodobitve" class="btn btn-primary text-uppercase fw-bold"
+                    (click)="urediShrani()">
+                    {{urediShraniGumb}}
+                  </button>
+                  <button class="btn btn-danger text-uppercase fw-bold ms-2" *ngIf="!vnosOnemogocen"
+                  (click)="prekliciSpremembe()">
+                    PREKLIČI
+                  </button>
+                </div>
+              </div>
+              <div class="row text-danger" *ngIf="odstevanjeDoPosodobitve">
+                {{preostanekCasaZaUpdate | formatirajPreostaliCas}}
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="changePictureModal"  tabindex="-1" role="dialog" aria-labelledby="changePictureModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 520px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePictureModalLabel">Spremeni sliko</h5>
+        </div>
+        <div class="modal-body" style="max-width: 520px;">
+          <app-izbira-avatar></app-izbira-avatar>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zapri</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

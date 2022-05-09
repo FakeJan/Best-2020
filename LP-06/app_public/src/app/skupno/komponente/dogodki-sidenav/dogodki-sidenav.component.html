@@ -1,0 +1,45 @@
+<ul style="list-style-type:none">
+    <li class="nav-item mb-1">
+        <a routerLink="/ustvari_dogodek" class="border nav-link active disabled bg-primary bg-gradient text-white"
+            *ngIf="selectedPage=='create'; else normalNavLink" aria-current="page">
+            <i class="far fa-calendar-plus"></i>
+            Dodaj nov dogodek
+        </a>
+        <ng-template #normalNavLink>
+            <a routerLink="/ustvari_dogodek" class="border nav-link" aria-current="page">
+                <i class="far fa-calendar-plus"></i>
+                Dodaj nov dogodek
+            </a>
+        </ng-template>
+    </li>
+    <li class="nav-item mb-1">
+        <a id="createdEventsNav" style="cursor: pointer;" routerLink="/ustvarjeni_dogodki"
+            class="border nav-link active disabled bg-primary bg-gradient text-white"
+            *ngIf="selectedPage=='created'; else normalNavLink2" aria-current="page">
+            <i class="fas fa-edit"></i>
+            Ustvarjeni dogodki
+        </a>
+        <ng-template #normalNavLink2>
+            <a id="createdEventsNav" style="cursor: pointer;" routerLink="/ustvarjeni_dogodki" class="border nav-link"
+                aria-current="page">
+                <i class="fas fa-edit"></i>
+                Ustvarjeni dogodki
+            </a>
+        </ng-template>
+    </li>
+    <li class="nav-item mb-1">
+        <a id="joinedEventsNav" style="cursor: pointer;" routerLink="/pridruzeni_dogodki"
+            class="border nav-link active disabled bg-primary bg-gradient text-white"
+            *ngIf="selectedPage=='joined'; else normalNavLink3" aria-current="page">
+            <i class="far fa-calendar-check"></i>
+            Pridruženi dogodki
+        </a>
+        <ng-template #normalNavLink3>
+            <a id="joinedEventsNav" style="cursor: pointer;" routerLink="/pridruzeni_dogodki" class="border nav-link"
+                aria-current="page">
+                <i class="far fa-calendar-check"></i>
+                Pridruženi dogodki
+            </a>
+        </ng-template>
+    </li>
+</ul>

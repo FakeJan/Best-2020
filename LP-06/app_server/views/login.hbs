@@ -1,0 +1,80 @@
+<!--<div class="container"> -->
+<div class="row">
+  <div class="col-sm-9 col-md-7 col-lg-5 col-xl-4 mx-auto">
+    <div class="card border-0 shadow rounded-3 my-1 my-sm-5">
+      <div class="card-body p-4 p-sm-5">
+        <div class="naslovInLogo w-100 p-3">
+          <a href="/"><img src="/images/GoodMeetsLogo.png" alt="GoodMeetsLogo" /></a>
+          <div class="h3">Prijava</div>
+        </div>
+        <form id="prijavaForm">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" />
+            <label for="floatingInput">E-naslov</label>
+            <div id="sporociloEmail" class="invalid-feedback">
+              {{!-- sporocila o ustrezno emaila --}}
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+            <label for="floatingPassword">Geslo</label>
+            <div id="sporociloPassword" class="invalid-feedback">
+              {{!-- sporocila o ustreznosti gesla --}}
+            </div> 
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
+            <label class="form-check-label" for="rememberPasswordCheck">
+              Zapomni si geslo
+            </label>
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
+              {{!-- <a class="loginButton" href="events">Prijavi se</a> --}}
+              Prijavi se
+            </button>
+            <p class="napisPodPrijavo">
+              Še nimaš računa?
+              <a class="text-decoration-none" href="signup">Registriraj se</a>
+            </p>
+          </div>
+          <div class="d-flex align-items-center my-1">
+            <div class="col-5">
+              <hr />
+            </div>
+            <div class="col-2">
+              <p class="text-center mb-0 opacity-50">ALI</p>
+            </div>
+            <div class="col-5">
+              <hr />
+            </div>
+          </div>
+          <div class="
+              socialMediaRow
+              d-flex
+              flex-row
+              align-items-center
+              justify-content-lg-start
+            ">
+            <p class="lead fw-normal mb-1 me-3">Prijava z</p>
+            <button type="button" style="background-color: #3b5998"
+              class="socialMediaBtn btn btn-primary btn-floating mx-1">
+              <i class="bi bi-facebook"></i>
+            </button>
+
+            <button type="button" style="background-color: #db4437"
+              class="socialMediaBtn btn btn-primary btn-floating mx-2">
+              <i class="bi bi-google"></i>
+            </button>
+
+            <button type="button " style="background-color: #00acee"
+              class="socialMediaBtn btn btn-primary btn-floating mx-1">
+              <i class="bi bi-twitter"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

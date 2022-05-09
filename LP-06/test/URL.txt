@@ -1,0 +1,8 @@
+http://localhost:3000/
+http://localhost:3000/prijava
+http://localhost:3000/registracija
+http://localhost:3000/dogodki
+http://localhost:3000/ustvarjeni_dogodki
+http://localhost:3000/uredi_dogodek/61a266e0607c838c00b709f5
+http://localhost:3000/klepet/61a26a28936c2224f93127f6
+http://localhost:3000/web3

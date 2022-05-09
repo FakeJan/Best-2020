@@ -1,0 +1,18 @@
+<div class="" style="max-height: 400px; overflow: auto; ">
+
+  {{#each paths as |path|}}
+    <a
+      onclick="changeImage('{{path}}')"
+      class=""
+      style="width: 20px; cursor: pointer;"
+    >
+      <img
+        class="rounded-circle mb-2"
+        style="width: 144px; height: 144px;"
+        id="eventImage"
+        src="/images/events/{{path}}"
+      />
+    </a>
+  {{/each}}
+
+</div>

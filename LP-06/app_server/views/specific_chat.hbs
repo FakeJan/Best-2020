@@ -1,0 +1,167 @@
+<!-- sidebar -->
+<div id="main-sidebar-container" class="col-12 pull-left collapse">
+    <div class="main-sidebar">
+        <div id="plist" class="people-list">
+            <div class="m-2">
+                <div class="autocomplete">
+                    <input id="searchEventsSide" autocomplete="off" class="autocomplete-text-input" type="text"
+                        placeholder="Išči" />
+                    <button id="searchEventsClearSide" class="fas fa-backspace autocomplete-button">
+                    </button>
+                </div>
+                <button class="btn btn-outline-secondary" style="float: right; margin-top: 5px;"
+                    data-bs-toggle="collapse" data-bs-target="#main-sidebar-container"
+                    aria-controls="main-sidebar-container" onclick="closeNav()"><i class="fas fa-bars"></i></button>
+            </div>
+
+            <hr class="m-0" />
+            <ul class="list-unstyled chat-list m-0 p-0 overflow-auto" style="min-height: 50em;">
+
+                {{#each chats as |stranskiDogodek|}}
+                <li class="clearfix border-bottom stranskiDogodki" id={{stranskiDogodek.dogodekId._id}}>
+                    <img src={{stranskiDogodek.dogodekId.eventImage}} alt="avatar" />
+                    <div class="about">
+                        <div class="name">{{stranskiDogodek.dogodekId.title}}</div>
+                        <div class="status">
+                            {{#if stranskiDogodek.zadnjaAktivnost }}
+                            <i class="fa fa-circle online"></i>
+                            {{{date_formatter stranskiDogodek.zadnjaAktivnost}}}
+                            {{else}}
+                            <i class="fa fa-circle offline"></i>
+                            ni aktivnosti
+                            {{/if}}
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end sidebar -->
+
+<!-- body -->
+<div class="container mt-3">
+    <div class="col col-12 flex-fill mb-3">
+        <div class="card chat-app p-0 m-0">
+
+            <div id="plist" class="people-list m-0 p-0" style="width: 15rem;">
+                <div class="m-3 ms-2 me-1" style="height: 2.7rem;">
+                    <div class="autocomplete">
+                        <input id="searchEvents" autocomplete="off" class="autocomplete-text-input" type="text"
+                            placeholder="Išči" />
+                        <button id="searchEventsClear" class="fas fa-backspace autocomplete-button">
+                        </button>
+                    </div>
+                </div>
+
+                <hr class="m-0" />
+                <ul class="list-unstyled chat-list m-0 p-0 overflow-auto">
+
+                    {{#each chats as |stranskiDogodek|}}
+                    <li class="clearfix border-bottom stranskiDogodki" id={{stranskiDogodek.dogodekId._id}}>
+                        {{!-- <img src={{stranskiDogodek.src}} alt="avatar" /> --}}
+                        <div class="row p-0">
+                            <div class="align-self-center col-auto p-0"><img
+                                    src={{stranskiDogodek.dogodekId.eventImage}} alt="avatar" />
+                            </div>
+
+                            <div class="col p-0">
+                                <div class="about ">
+                                    <div class="name">{{stranskiDogodek.dogodekId.title}}</div>
+                                    <div class="status">
+                                        {{#if stranskiDogodek.zadnjaAktivnost }}
+                                        <i class="fa fa-circle online"></i>
+                                        {{{date_formatter stranskiDogodek.zadnjaAktivnost}}}
+                                        {{else}}
+                                        <i class="fa fa-circle offline"></i>
+                                        ni aktivnosti
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+
+            <div class="chat">
+
+                <div class="chat-header clearfix m-0 border-bottom">
+                    <button class="btn btn-outline-secondary d-md-none" data-bs-toggle="collapse"
+                        data-bs-target="#main-sidebar-container" aria-controls="main-sidebar-container"
+                        onclick="openNav()" style="float: left; margin-left: 10px; margin-right: 5px;"><i
+                            class="fas fa-bars"></i></button>
+                    <h1 class="m-3 text-black float-st center" style="height: 2.7rem;">
+                        {{#if selectedChat}}
+                        {{selectedChat.dogodekId.title}}
+                        {{else}}
+                        Ni izbranega pogovora
+                        {{/if}}
+                    </h1>
+                </div>
+
+                <div class="chat-history">
+                    {{#if selectedChat}}
+                    <ul class="m-b-0" id="chatScroll">
+
+                        {{#each selectedChat.sporocila as |sporocilo|}}
+                        <li class="clearfix">
+                            <div
+                                class="message-data {{#myMsg (json ../trenutniUporabnik) (json sporocilo.userId._id)}}text-end{{else}}{{/myMsg}}">
+                                {{#myMsg (json ../trenutniUporabnik) (json sporocilo.userId._id)}}
+
+
+                                <span class="message-data-time"><small>{{sporocilo.userId.uporabniskoIme}}
+                                        {{time_formatter sporocilo.datum}}</small></span>
+                                <img src="/images/profileAvatars/avatarOptions/profileAvatar{{sporocilo.userId.slika}}.png"
+                                    alt="avatar" />
+
+                                {{else}}
+
+                                <img src="/images/profileAvatars/avatarOptions/profileAvatar{{sporocilo.userId.slika}}.png"
+                                    alt="avatar" />
+                                <span class="message-data-time"><small>{{sporocilo.userId.uporabniskoIme}}
+                                        {{time_formatter sporocilo.datum}}</small></span>
+
+                                {{/myMsg}}
+                            </div>
+
+                            <div
+                                class="message {{#myMsg (json ../trenutniUporabnik) (json sporocilo.userId._id)}}other-message float-end{{else}}my-message{{/myMsg}}">
+                                {{sporocilo.vsebina}}
+                                {{#myMsg (json ../trenutniUporabnik) (json sporocilo.userId._id)}}
+                                <a href="" onclick="deleteMessage('{{../selectedChat._id}}','{{sporocilo._id}}')">
+                                    <i class="fas fa-trash-alt text-secondary"></i>
+                                </a>
+                                {{/myMsg}}
+                            </div>
+
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </div>
+
+                <hr class="m-0" />
+                <div class="chat-message">
+
+                    <div class="input-group row m-0 p-0">
+                        <input id="chatMessage" type="text" class="form-control" placeholder="Vnesite besedilo..."
+                            onkeydown="onEnterTextKeyDown('{{selectedChat._id}}')" />
+
+                        <a class="ms-2 p-0 col-auto col-sm-auto text-primary align-self-center float-end" role="button"
+                            onclick="updateChat('{{trenutniUporabnik}}', '{{selectedChat._id}}')">
+                            <i class="fas fa-paper-plane fa-lg "></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{> footer}}
+</div>

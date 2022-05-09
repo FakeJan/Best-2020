@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/stylesheets/adminUporabniki.css" />
+<div class="container">
+  {{> admin_search}}
+    <div
+      class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 gutters-sm"
+    >
+      {{#each uporabniki as |uporabnik|}}
+        <div class="col mb-3 uporabniki">
+          <div class="card">
+            <img
+              src="/images/profileAvatars/ozadjeUporabnika.png"
+              alt="Cover"
+              class="card-img-top"
+            />
+            <div class="card-body text-center">
+              <img
+                src="/images/profileAvatars/avatarOptions/profileAvatar{{uporabnik.slika}}.png"
+                style="width:100px;margin-top:-65px"
+                alt="User"
+                class="img-fluid img-thumbnail rounded-circle border-0 mb-3"
+              />
+              <h5 class="card-title" id="uporabnikImePriimek">{{uporabnik.ime}}
+                {{uporabnik.priimek}}</h5>
+              <p class="text-secondary mb-1" id="uporabnikUporabniskoIme">{{uporabnik.uporabniskoIme}}</p>
+              <p class="text-secondary mb-1" id="uporabnikEmail">{{uporabnik.email}}</p>
+              <p class="text-muted font-size-sm" id="uporabnik_id">{{uporabnik._id}}</p>
+            </div>
+            <div class="card-footer">
+              <button
+                class="btn btn-danger btn-sm has-icon btn-block"
+                onclick="deleteUser('{{uporabnik._id}}')"
+                type="button"
+              >Odstrani</button>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

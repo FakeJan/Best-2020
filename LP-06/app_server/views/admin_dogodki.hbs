@@ -1,0 +1,84 @@
+<div class="col-lg-9 col-11">
+  {{> admin_search}}
+  {{#each events as |event|}}
+  <div class="row">
+    <div class="card event">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img
+            class="stock-image d-none d-md-block"
+            src="{{event.eventImage}}"
+            class="img-fluid"
+            />
+        </div>
+
+        <div class="col-md-6 event-body">
+          <div class="card-body">
+            <h5 class="card-title">{{event.title}}
+              <i class="fas fa-running d-md-none"></i>
+            </h5>
+            <p class="card-text"><b>Čas dogodka: </b>{{{date_formatter
+              event.date
+              }}}</p>
+            <p class="card-text"><b>Kraj dogodka:
+              </b>{{event.address}},
+              {{event.city}}</p>
+            <p class="card-text d-md-none"><b>Vremenska napoved:
+              </b>{{event.weather}}<i class="fas fa-sun"></i></p>
+            <div class="chip-div">
+              <ul class="chip-list">
+                {{#each event.tags as |tag|}}
+                <li class="chip">
+                  {{tag}}
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+            <a
+              class="btn btn-success text-success border-0 mt-2 p-0
+              bg-transparent"
+              data-bs-target="#a{{event._id}}"
+              data-bs-toggle="collapse"
+              aria-expanded="true"
+              aria-controls="eventItem">Več
+              <i class="fas fa-angle-down"></i>
+            </a>
+          </div>
+          <div id="a{{event._id}}" class="collapse"
+            aria-labelledby="headingOne">
+            <div class="card-body">
+              {{event.description}}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 event-side pt-0 pt-md-3 p-3 m-0 bottom-0">
+          <p class="m-0 mt-2 mt-md-0"><b>Število oseb:
+            </b>{{event.users.length}}{{#if_condition
+            event.participantMax
+            0
+            }}{{else}}/{{event.participantMax}}{{/if_condition}}
+            <i class="fas fa-user-friends me-2"></i>
+            {{!-- <a type="button" onclick="openChat('{{event._id}}')">
+              <i class="bi bi-chat-left-dots fa-lg mt-2" style="color: black;"></i>
+            </a> --}}
+          </p>
+          <img
+            class="weather d-none d-md-block"
+            src="{{event.weatherImage}}"
+            class="img-fluid"
+            />
+          <div class="joined-event-side">
+            <button
+              type="button"
+              onclick="deleteEvent('{{event._id}}')"
+              class="btn btn-danger event-side-button delete-button ms-2 mt-2
+              mt-xxl-0">Izbriši
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

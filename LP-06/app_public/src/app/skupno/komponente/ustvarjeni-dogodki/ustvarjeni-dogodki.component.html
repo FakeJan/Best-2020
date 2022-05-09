@@ -1,0 +1,18 @@
+<div class="container mt-3">
+    <div class="row m-0">
+        <div class="nav nav-pills col-lg-3 col-md-12 flex-column m-0 mb-3 p-0 pe-lg-2">
+            <app-dogodki-sidenav [selectedPage]="'created'"></app-dogodki-sidenav>
+        </div>
+
+        <div *ngIf="dogodki" class="col-lg-9 col-md-12">
+            <app-seznam-dogodkov [page]="'created'" [dogodki]="dogodki" [totalEvents]="totalEvents" [pageSize]="pageSize"></app-seznam-dogodkov>
+        </div>
+
+        <div class="nav m-3">
+            <a routerLink="/ustvari_dogodek" class="nav-link link-dark add-event-float">
+                <div class="far fa-calendar-plus"></div>
+                <div class="">Dodaj dogodek</div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,346 @@
+[
+    {
+        "_id": {
+            "$oid": "61a26530651097e5537b7231"
+        },
+        "title": "Nogometna tekma",
+        "eventImage": "assets/images/events/football.png",
+        "date": {
+            "$date": "2022-08-08T23:00:00Z"
+        },
+        "city": "8000 Novo Mesto",
+        "address": "Črmošnjice pri Stopičah ",
+        "coordinates": [
+            15.172119140625002,
+            45.77901739936284
+        ],
+        "tags": [
+            "Šport",
+            "Nogomet",
+            "Zunaj"
+        ],
+        "participantMax": 11,
+        "description": "todo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadododo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdadodo opisasdasdado opisasdasdad",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe2"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe3"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe5"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a266e0607c838c00b709f5"
+        },
+        "title": "Večerno igranje ",
+        "eventImage": "assets/images/events/game-console.png",
+        "date": {
+            "$date": "2021-12-02T23:00:00Z"
+        },
+        "city": "1000 Ljubljana",
+        "address": "Tavčarjeva ulica 17",
+        "coordinates": [
+            14.508304595947267,
+            46.05464975654584
+        ],
+        "tags": [
+            "Igre",
+            "Zabava",
+            "Zvečer"
+        ],
+        "participantMax": 4,
+        "description": "Fortnite in COD",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe2"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe5"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe6"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26795607c838c00b709fd"
+        },
+        "title": "Fitness",
+        "eventImage": "assets/images/events/fitness.png",
+        "date": {
+            "$date": "2021-12-10T23:00:00Z"
+        },
+        "city": "1290 Grosuplje",
+        "address": "Jakhlova cesta 3",
+        "coordinates": [
+            14.659881591796875,
+            45.952104488469985
+        ],
+        "tags": [
+            "Hrana",
+            "Pijača",
+            "Slovenija"
+        ],
+        "participantMax": 2,
+        "description": "Fitnes, kasneje tudi malica",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe2"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe5"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26835607c838c00b70a09"
+        },
+        "title": "Pohod na Gorjance",
+        "eventImage": "assets/images/events/hiking%20(1).png",
+        "date": {
+            "$date": "2021-12-16T23:00:00Z"
+        },
+        "city": "8321 Novo Mesto",
+        "address": "Jugorje ",
+        "coordinates": [
+            15.292968750000002,
+            45.74404779674727
+        ],
+        "tags": [
+            "Gorjanci",
+            "Pohod",
+            "Hoja"
+        ],
+        "participantMax": 0,
+        "description": "Vabljeni vsi, ki imate čas in bi radi šli na pohod. \nZbor je okoli 7 ure zjutraj.",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe3"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe5"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe6"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a268f0936c2224f93127de"
+        },
+        "title": "Plezanje po skalah",
+        "eventImage": "assets/images/events/rock.png",
+        "date": {
+            "$date": "2022-01-04T23:00:00Z"
+        },
+        "city": "4270 Jesenice",
+        "address": "Črni vrh - Na pečeh ",
+        "coordinates": [
+            14.0789794921875,
+            46.47380788661107
+        ],
+        "tags": [
+            "Zunaj",
+            "Plezanje",
+            "Svoja oprema"
+        ],
+        "participantMax": 10,
+        "description": "Vabljeni, do 10 ljudi na zimsko plezanje po mrzlem.",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe4"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe2"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe3"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a269a5936c2224f93127ea"
+        },
+        "title": "Ogled predstave Labodje jezero",
+        "eventImage": "assets/images/events/masks.png",
+        "date": {
+            "$date": "2022-04-28T22:00:00Z"
+        },
+        "city": "SI-1000 Ljubljana",
+        "address": "Večna pot ",
+        "coordinates": [
+            14.47551727294922,
+            46.05119493132501
+        ],
+        "tags": [
+            "Kultura",
+            "Kulturni center",
+            "Hrana",
+            "Pijača"
+        ],
+        "participantMax": 100,
+        "description": "Vabljeni na ogled predstave Labodje jezero.\nPro predstavi bo tudi pogostitev s hrano in pijačo",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe5"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe4"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe6"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26a28936c2224f93127f6"
+        },
+        "title": "Ogled filma Avengers v kinu",
+        "eventImage": "assets/images/events/clapperboard.png",
+        "date": {
+            "$date": "2022-08-06T22:00:00Z"
+        },
+        "city": "1000 Ljubljana",
+        "address": "Franketova ulica 3",
+        "coordinates": [
+            14.504699707031252,
+            46.06751410107052
+        ],
+        "tags": [
+            "Film",
+            "Hrana",
+            "Pijača"
+        ],
+        "participantMax": 25,
+        "description": "Kino center organizira brezplačen ogled novega filma.\nZa hrano in pijačo bo poskrbel organizator.",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe6"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe2"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe3"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26a6b936c2224f93127fe"
+        },
+        "title": "Rojstnodnevna zabava",
+        "eventImage": "assets/images/events/party.png",
+        "date": {
+            "$date": "2022-01-16T23:00:00Z"
+        },
+        "city": "2000 Maribor",
+        "address": "Meljski hrib 91",
+        "coordinates": [
+            15.669250488281252,
+            46.56452573114373
+        ],
+        "tags": [
+            "50-letnica",
+            "Rojstni dan",
+            "Hrana",
+            "Pijača",
+            "Vikend zabava"
+        ],
+        "participantMax": 0,
+        "description": "Vabljeni na 50-letnico slavnega avtorja Žige Draba.",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe6"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe4"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe5"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26ab9936c2224f9312806"
+        },
+        "title": "Sprehod",
+        "eventImage": "assets/images/events/walking-the-dog.png",
+        "date": {
+            "$date": "2021-12-30T23:00:00Z"
+        },
+        "city": "6257 Divača",
+        "address": "Magajnova pot 159",
+        "coordinates": [
+            14.046020507812502,
+            45.66204689217987
+        ],
+        "tags": [
+            "Sprehod",
+            "Hoja",
+            "Zunaj",
+            "Druženje"
+        ],
+        "participantMax": 4,
+        "description": "Sprehod z/brez psa",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe6"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe2"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe3"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe4"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26bcbe9abeeccc3477d2f"
+        },
+        "title": "Učenje Fizike",
+        "eventImage": "assets/images/events/studying.png",
+        "date": {
+            "$date": "2022-01-01T23:00:00Z"
+        },
+        "city": "8501 Novo Mesto",
+        "address": "Trška Gora ",
+        "coordinates": [
+            15.180358886718752,
+            45.8421944579529
+        ],
+        "tags": [
+            "Učenje",
+            "Fizika",
+            "Pomoč"
+        ],
+        "participantMax": 3,
+        "description": "Miha Ljubi potrebuje pomoč pri učenju fizike.",
+        "users": [
+            {
+                "$oid": "619bd4d477f724f7b1c6efe6"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe4"
+            },
+            {
+                "$oid": "619bd4d477f724f7b1c6efe5"
+            }
+        ]
+    }
+]

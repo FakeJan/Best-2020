@@ -1,0 +1,124 @@
+<!-- mainfunction -->
+<div class="row mb-2 bg-light pt-2 pb-2">
+  <div class="col-12 col-sm-6 mb-2 mb-sm-0 d-flex">
+    <button style="margin-right: 5px;" id="filterButton" class="btn btn-outline-secondary d-lg-none"
+      data-bs-toggle="collapse" data-bs-target="#main-sidebar-container" aria-controls="main-sidebar-container"
+      (click)="openNav()"><i class="fas fa-bars"></i></button>
+    <select id="sortBy" class="form-select form-control w-75 w-md-100" (change)="orderBy($event, dogodki)">
+      <option value="0" selected>Razvrsti po</option>
+      <option value="title">A-Ž</option>
+      <option value="-title">Ž-A</option>
+      <option value="-date">Datum padajoče</option>
+      <option value="date">Datum naraščajoče</option>
+    </select>
+  </div>
+  <div class="col-12 col-sm-6 ">
+    <div class="input-group w-75 w-md-100 float-end">
+      <input id="search" type="search" class="form-control end-0" placeholder="Išči" [(ngModel)]="searchword" />
+      <button aria-label="Search" class="border-0 bg-transparent" onclick="search()">
+        <i class="fas fa-search ms-2 end-0"></i>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- <div class="d-none" id="noEvents">
+      <h1>Ni dogodkov</h1>
+  </div>
+  {{#if_condition events.length 0}}
+  <div>
+      <h1>Ni dogodkov</h1>
+  </div> -->
+<div id="neki" *ngFor="let event of dogodki | filter:searchword | paginate : {
+  itemsPerPage: pageSize,
+  currentPage: pageNumber,
+  totalItems: totalEvents
+};" [ngSwitch]='event.buttons'>
+  <div class="row">
+    <div class="card event">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img class="stock-image d-none d-md-block" src="{{event.eventImage}}" alt="assets/images/events/timetable.png"
+            class="img-fluid" style="margin-top: 10px;" />
+        </div>
+
+        <div class="col-md-6 event-body">
+          <div class="card-body">
+            <h5 class="card-title">{{event.title}}</h5>
+            <p class="card-text"><b>Čas dogodka: </b>{{event.date | dateFormate }}</p>
+            <p class="card-text"><b>Kraj dogodka:
+              </b>{{event.address}},
+              {{event.city}}</p>
+            <p class="card-text d-md-none"><b>Vremenska napoved:
+              </b><span id="weather"></span></p>
+            <div class="chip-div">
+              <ul class="chip-list" *ngFor="let tag of event.tags">
+                <li class="chip me-1">
+                  {{tag}}
+                </li>
+              </ul>
+            </div>
+            <a role="button" class="btn btn-success text-success border-0 mt-2 p-0 bg-transparent"
+              [attr.data-bs-target]="'#a'+event._id" data-bs-toggle="collapse" aria-expanded="true"
+              aria-label="Opis dogodka">Več
+              <i class="fas fa-angle-down"></i>
+            </a>
+          </div>
+          <div id="a{{event._id}}" class="collapse" aria-labelledby="headingOne">
+            <div class="card-body">
+              {{event.description}}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 event-side pt-0 pt-md-3 p-3 m-0 bottom-0">
+          <p class="m-0 mt-2 mt-md-0"><b>Število oseb:
+            </b>
+            {{event.participantMax > 0? (event.users.length + "/" + event.participantMax) : event.users.length}}
+            <i class="fas fa-user-friends me-2"></i>
+            <a [id]="event._id" type="button" (click)="jePovezava() && loadChat(event._id)"
+              *ngIf="event._id | arrayIncludes">
+              <i class="bi bi-chat-left-dots fa-lg mt-2" style="color: black;"></i>
+            </a>
+          </p>
+          <img class="weather d-none d-md-block" src={{event.eventWeather}} alt="" class="img-fluid" />
+
+          <div *ngSwitchCase="'joined'" class="joined-event-side">
+            <button [disabled]="!jePovezava()" type="button" (click)='donateEvent(event._id)'
+              class="btn btn-success event-side-button mt-2 mt-md-0">Doniraj</button>
+            <button [disabled]="!jePovezava()" type="button" (click)='leaveEvent(event._id)'
+              class="btn btn-danger event-side-button ms-2 mt-2 mt-xxl-0">Odjavi se</button>
+          </div>
+
+          <div *ngSwitchCase="'created'" class="joined-event-side">
+            <a [class.disabled]="!jePovezava()" class="btn btn-primary event-side-button mt-2 mt-xxl-0" role="button"
+              (click)='editEvent(event._id)'>Uredi</a>
+            <button [disabled]="!jePovezava()" type="button" (click)='deleteEvent(event._id)'
+              class="btn btn-danger event-side-button delete-button ms-2 mt-2 mt-xxl-0">Izbriši
+            </button>
+          </div>
+
+          <div *ngSwitchCase="'admin'" class="joined-event-side">
+            <button [disabled]="!jePovezava()" type="button" (click)='deleteEvent(event._id)'
+              class="btn btn-danger event-side-button delete-button ms-2 mt-2 mt-xxl-0">Izbriši
+            </button>
+          </div>
+
+          <div *ngSwitchCase="'gost'" class="joined-event-side">
+          </div>
+
+          <div *ngSwitchDefault class="joined-event-side">
+            <button [disabled]="!jePovezava()" type="submit" (click)='joinEvent(event._id)'
+              class="btn btn-success event-side-button">Pridruži
+              se</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<pagination-controls *ngIf="totalEvents > 10" previousLabel="Nazaj" nextLabel="Naprej" [responsive]="true"
+  (pageChange)="handlePageChange($event)">
+</pagination-controls>
+<!-- /mainfunction -->

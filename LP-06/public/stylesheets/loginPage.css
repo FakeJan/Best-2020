@@ -1,0 +1,39 @@
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.hr {
+  height: 2px;
+  width: 100%;
+  border-width: 0;
+  color: rgb(173, 173, 173);
+  background-color: rgb(173, 173, 173);
+}
+
+.socialMediaBtn {
+  border-color: rgb(173, 173, 173);
+}
+
+.napisPodPrijavo {
+  margin-top: 0.5rem;
+}
+
+.socialMediaRow {
+  margin-top: 1.5rem;
+}
+
+.naslovInLogo {
+  text-align: center;
+  padding-top: 0.1rem !important;
+}
+
+.loginButton:hover {
+  color: white;
+}
+
+.loginButton {
+  text-decoration: none;
+  color: white;
+}

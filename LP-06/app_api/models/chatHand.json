@@ -1,0 +1,948 @@
+[
+    {
+        "_id": {
+            "$oid": "61a26530651097e5537b7235"
+        },
+        "dogodekId": {
+            "$oid": "61a26530651097e5537b7231"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:20:58.911Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:57:17.246Z"
+                },
+                "vsebina": "A to se potem igra na travi?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28d9de57fb93d9d6c7074"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:57:28.224Z"
+                },
+                "vsebina": "Nisem nič zasledil v opisu",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28da8e57fb93d9d6c7086"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:57:41.272Z"
+                },
+                "vsebina": "Po tekmi gremo tudi na pijačo predvidevam?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28db5e57fb93d9d6c709a"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:12:46.492Z"
+                },
+                "vsebina": "SEVEDA!!!!!",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a2913ee57fb93d9d6c75b0"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:12:52.978Z"
+                },
+                "vsebina": "Na pir",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a29144e57fb93d9d6c75d1"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:15:26.838Z"
+                },
+                "vsebina": "IDE",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a291dee57fb93d9d6c791a"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:20:58.911Z"
+                },
+                "vsebina": "mah ",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a2932ae57fb93d9d6c7e86"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a266e0607c838c00b709f9"
+        },
+        "dogodekId": {
+            "$oid": "61a266e0607c838c00b709f5"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:22:30.940Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:08:35.799Z"
+                },
+                "vsebina": "Potem lahko s sabo prinesem controller?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a29043e57fb93d9d6c730c"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:11:31.465Z"
+                },
+                "vsebina": "Jaz mislim da ja.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a290f3e57fb93d9d6c7486"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:13:01.335Z"
+                },
+                "vsebina": "Ja lahko",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a2914de57fb93d9d6c760c"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:21:05.779Z"
+                },
+                "vsebina": "Večerno ",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a29331e57fb93d9d6c7ef5"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:22:25.220Z"
+                },
+                "vsebina": "OK pol banane pa jabolka",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a29381e57fb93d9d6c8134"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:22:30.940Z"
+                },
+                "vsebina": "al kaj?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a29386e57fb93d9d6c816a"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26795607c838c00b70a01"
+        },
+        "dogodekId": {
+            "$oid": "61a26795607c838c00b709fd"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:21:17.473Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:08:58.946Z"
+                },
+                "vsebina": "Živjo",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a2905ae57fb93d9d6c7331"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:13:08.340Z"
+                },
+                "vsebina": "Dober dan",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a29154e57fb93d9d6c7648"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:21:17.473Z"
+                },
+                "vsebina": "Jupiter Saturn Uran Neptun",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a2933de57fb93d9d6c7f66"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26835607c838c00b70a0d"
+        },
+        "dogodekId": {
+            "$oid": "61a26835607c838c00b70a09"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:21:54.930Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:53:01.312Z"
+                },
+                "vsebina": "POZOR! Ne pozabiti, da je odhod natanko ob 7 uri zjutraj. ",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28c9de57fb93d9d6c6fe4"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:54:25.718Z"
+                },
+                "vsebina": "Če pa se komu pripeti da bo zaradi kakršnih koli težav malo zamudil, mora to sporočiti meni.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28cf1e57fb93d9d6c6ff0"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:11:12.084Z"
+                },
+                "vsebina": "Kaj pa če zamudimo par minut?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a290e0e57fb93d9d6c7436"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:15:42.930Z"
+                },
+                "vsebina": "Bo ok.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a291eee57fb93d9d6c797d"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:21:54.930Z"
+                },
+                "vsebina": "One Yahoo",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a29362e57fb93d9d6c7fb7"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a268f0936c2224f93127e2"
+        },
+        "dogodekId": {
+            "$oid": "61a268f0936c2224f93127de"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:18:39.674Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:50:06.136Z"
+                },
+                "vsebina": "Živjo, kdaj pa se potem približno dobimo?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a28beee57fb93d9d6c6fb1"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:58:04.629Z"
+                },
+                "vsebina": "Meni se zdi da je odhod ob 10 zjutraj.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28dcce57fb93d9d6c70be"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:58:15.969Z"
+                },
+                "vsebina": "Imam pa vprašanje glede opreme.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28dd7e57fb93d9d6c70d4"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:58:44.670Z"
+                },
+                "vsebina": "Piše, da moramo imeti opremo s seboj, me pa zanima ali si lahko tudi pri vas kaj sposodimo?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28df4e57fb93d9d6c70ec"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:59:30.550Z"
+                },
+                "vsebina": "Osebno nimam popolne opreme, me zanima ali ima kdo drug na voljo dodatni par oprijemalk?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28e22e57fb93d9d6c7106"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:00:27.720Z"
+                },
+                "vsebina": "Dobimo se ob 9:30, načeloma pa je odhod okoli 10 ure.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a28e5be57fb93d9d6c7197"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:00:52.592Z"
+                },
+                "vsebina": "Tako da če pridete nekaj pred 10 bo ok.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a28e74e57fb93d9d6c71ac"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:01:44.659Z"
+                },
+                "vsebina": "Glede opreme pa tako: Osebno nimam nič za sposodit, imam pa poznanca, ki prodaja take stvari, lahko povprašam za izposojo.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a28ea8e57fb93d9d6c71c3"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:13:41.013Z"
+                },
+                "vsebina": "OK jaz osebno nimam nic za sposodit mam vse sam.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a29175e57fb93d9d6c768d"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:16:02.618Z"
+                },
+                "vsebina": "Velja, potem pa le povprašajte.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a29202e57fb93d9d6c79c9"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:18:33.614Z"
+                },
+                "vsebina": "Sem povprašal, je rekel da si lahko izposodim.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a29299e57fb93d9d6c7b94"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:18:39.674Z"
+                },
+                "vsebina": "Kaj potem potrebujete?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a2929fe57fb93d9d6c7bc0"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a269a5936c2224f93127ee"
+        },
+        "dogodekId": {
+            "$oid": "61a269a5936c2224f93127ea"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:18:54.745Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:04:30.995Z"
+                },
+                "vsebina": "Ne pozabit večerne obleke.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a28f4ee57fb93d9d6c7234"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:10:43.238Z"
+                },
+                "vsebina": "Velja!",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a290c3e57fb93d9d6c7403"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:18:54.745Z"
+                },
+                "vsebina": "Kokain?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a292aee57fb93d9d6c7c03"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26a28936c2224f93127fa"
+        },
+        "dogodekId": {
+            "$oid": "61a26a28936c2224f93127f6"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:22:52.552Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:50:48.790Z"
+                },
+                "vsebina": "Potem nam ni potrebno skrbeti za hrano in pijačo? V opisu piše, da bo zanjo poskrbljeno",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a28c18e57fb93d9d6c6fbe"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:55:06.555Z"
+                },
+                "vsebina": "Meni se zdi da ne.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28d1ae57fb93d9d6c700e"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:55:20.753Z"
+                },
+                "vsebina": "Piše v opisu da ni potrebo",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28d28e57fb93d9d6c701d"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:55:38.699Z"
+                },
+                "vsebina": "Me pa zanima, če lahko s sabo prinesemo še kaj drugega?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28d3ae57fb93d9d6c702e"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:09:43.730Z"
+                },
+                "vsebina": "Lahko ja.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a29087e57fb93d9d6c73a7"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:14:02.037Z"
+                },
+                "vsebina": "Kaj pa čokolada?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a2918ae57fb93d9d6c76d1"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:16:12.588Z"
+                },
+                "vsebina": "Uf",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a2920ce57fb93d9d6c7a14"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:16:16.532Z"
+                },
+                "vsebina": "Jaz bi tudi",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a29210e57fb93d9d6c7a40"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:22:52.552Z"
+                },
+                "vsebina": "TRIPALOSKI",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a2939ce57fb93d9d6c81d3"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26a6b936c2224f9312802"
+        },
+        "dogodekId": {
+            "$oid": "61a26a6b936c2224f93127fe"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:23:03.471Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:02:06.263Z"
+                },
+                "vsebina": "A darila moramo prinesti?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a28ebee57fb93d9d6c71e2"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:04:38.890Z"
+                },
+                "vsebina": "Ja",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a28f56e57fb93d9d6c7250"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:04:44.935Z"
+                },
+                "vsebina": "Mislim vsaj jaz bom",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a28f5ce57fb93d9d6c7262"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:04:50.563Z"
+                },
+                "vsebina": "Je vljudno",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a28f62e57fb93d9d6c7276"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:12:09.774Z"
+                },
+                "vsebina": "Se strinjam.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a29119e57fb93d9d6c74d8"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:19:07.503Z"
+                },
+                "vsebina": "OK, a avto lahko kupim za darilo?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a292bbe57fb93d9d6c7c4b"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:19:17.108Z"
+                },
+                "vsebina": "Mislim tist na daljinca ne tapravga",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a292c5e57fb93d9d6c7c75"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:19:23.615Z"
+                },
+                "vsebina": "Bencin predrag ",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a292cbe57fb93d9d6c7ca1"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:22:01.353Z"
+                },
+                "vsebina": "Google Boogle",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a29369e57fb93d9d6c800e"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:23:03.471Z"
+                },
+                "vsebina": "Bingle Dingle",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a293a7e57fb93d9d6c826f"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26ab9936c2224f931280a"
+        },
+        "dogodekId": {
+            "$oid": "61a26ab9936c2224f9312806"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:23:17Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:51:45.218Z"
+                },
+                "vsebina": "Potem lahko s sabo pripeljem tudi psa? Ne bo nobenih problemov?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a28c51e57fb93d9d6c6fcd"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T19:56:35.626Z"
+                },
+                "vsebina": "Meni se zdi da je ok, nisem pa siguren",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a28d73e57fb93d9d6c704a"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:14:13.744Z"
+                },
+                "vsebina": "OK.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe2"
+                },
+                "_id": {
+                    "$oid": "61a29195e57fb93d9d6c7714"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:16:29.606Z"
+                },
+                "vsebina": "Čeprav",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a2921de57fb93d9d6c7a8c"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:16:34.360Z"
+                },
+                "vsebina": "Nisem siguren",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe3"
+                },
+                "_id": {
+                    "$oid": "61a29222e57fb93d9d6c7ab7"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:19:58.766Z"
+                },
+                "vsebina": "ja",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a292eee57fb93d9d6c7cef"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:20:03.409Z"
+                },
+                "vsebina": "bo uredu",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a292f3e57fb93d9d6c7d1c"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:20:13.051Z"
+                },
+                "vsebina": "moj ps je cist kul",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a292fde57fb93d9d6c7d4b"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:23:17Z"
+                },
+                "vsebina": "Jupiter vela aaaaaaaa",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a293b5e57fb93d9d6c82dc"
+                }
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "61a26bcbe9abeeccc3477d33"
+        },
+        "dogodekId": {
+            "$oid": "61a26bcbe9abeeccc3477d2f"
+        },
+        "zadnjaAktivnost": {
+            "$date": "2021-11-27T20:20:31.910Z"
+        },
+        "sporocila": [
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:02:57.138Z"
+                },
+                "vsebina": "Torej če prav razumem se bomo učili o Magnetizmu? Integrali pa enačbe pa to?",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a28ef1e57fb93d9d6c7203"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:07:37.976Z"
+                },
+                "vsebina": "Mislim tako smo se zmenili.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe5"
+                },
+                "_id": {
+                    "$oid": "61a29009e57fb93d9d6c72e9"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:09:28.423Z"
+                },
+                "vsebina": "Je tako.",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe6"
+                },
+                "_id": {
+                    "$oid": "61a29078e57fb93d9d6c7376"
+                }
+            },
+            {
+                "datum": {
+                    "$date": "2021-11-27T20:20:31.910Z"
+                },
+                "vsebina": "Intregali banane, jabolke in grozdje",
+                "userId": {
+                    "$oid": "619bd4d477f724f7b1c6efe4"
+                },
+                "_id": {
+                    "$oid": "61a2930fe57fb93d9d6c7de9"
+                }
+            }
+        ]
+    }
+]

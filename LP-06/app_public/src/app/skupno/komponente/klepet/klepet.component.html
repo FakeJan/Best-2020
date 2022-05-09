@@ -1,0 +1,187 @@
+<!-- sidebar -->
+<div id="main-sidebar-container" class="col-12 pull-left collapse">
+    <div class="main-sidebar">
+        <div id="plist" class="people-list">
+            <div class="m-2">
+                <div class="autocomplete">
+                    <input id="searchEventsSide" autocomplete="off" class="autocomplete-text-input" type="text"
+                        placeholder="Išči" [(ngModel)]="searchword" />
+                    <button id="searchEventsClearSide" (click)="searchword=''" class="fas fa-backspace autocomplete-button">
+                    </button>
+                </div>
+                <button class="btn btn-outline-secondary" style="float: right; margin-top: 5px;"
+                    data-bs-toggle="collapse" data-bs-target="#main-sidebar-container"
+                    aria-controls="main-sidebar-container" (click)="closeNav()"><i class="fas fa-bars"></i></button>
+            </div>
+
+            <hr class="m-0" />
+            <ul class="list-unstyled chat-list m-0 p-0 overflow-auto" style="min-height: 50em;">
+
+                <li *ngFor="let stranskiDogodek of chats | filter:searchword"
+                    class="clearfix border-bottom stranskiDogodki" id={{stranskiDogodek.dogodekId._id}}
+                    (click)="getDogodekId(stranskiDogodek.dogodekId._id)">
+                    <img src={{stranskiDogodek.dogodekId.eventImage}} alt="avatar" />
+                    <div class="about">
+                        <div class="name">{{stranskiDogodek.dogodekId.title}}</div>
+
+                        <div class="status" *ngIf="stranskiDogodek.zadnjaAktivnost; else statusKlepeta">
+                            <i class="fa fa-circle online"></i>
+                            {{stranskiDogodek.zadnjaAktivnost | pretekliCas}}
+                        </div>
+
+                        <ng-template #statusKlepeta>
+                            <i class="fa fa-circle offline"></i>
+                            ni aktivnosti
+                        </ng-template>
+
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!-- end sidebar -->
+
+<!-- body -->
+<div class="container mt-3">
+    <div class="col col-12 flex-fill mb-3">
+        <div class="card chat-app p-0 m-0">
+
+            <div id="plist" class="people-list m-0 p-0" style="width: 15rem;">
+                <div class="m-3 ms-2 me-1" style="height: 3rem;">
+                    <div class="autocomplete">
+                        <input id="searchEvents" autocomplete="off" class="autocomplete-text-input" type="text"
+                            placeholder="Išči" [(ngModel)]="searchword" />
+                        <button id="searchEventsClear" (click)="searchword=''" class="fas fa-backspace autocomplete-button">
+                        </button>
+                    </div>
+                </div>
+
+                <hr class="m-0 p-0" />
+                <ul class="list-unstyled chat-list m-0 p-0 overflow-auto">
+                    <li *ngFor="let stranskiDogodek of chats | filter:searchword"
+                        class="clearfix border-bottom stranskiDogodki" id={{stranskiDogodek.dogodekId._id}}
+                        (click)="getDogodekId(stranskiDogodek.dogodekId._id)">
+
+                        <div class="row p-0">
+                            <div class="align-self-center col-auto p-0"><img
+                                    src={{stranskiDogodek.dogodekId.eventImage}} alt="avatar" />
+                            </div>
+
+                            <div class="col p-0">
+                                <div class="about">
+                                    <div class="name">{{stranskiDogodek.dogodekId.title}}</div>
+
+                                    <div class="status" *ngIf="stranskiDogodek.zadnjaAktivnost; else statusKlepeta">
+                                        <i class="fa fa-circle online"></i>
+                                        {{stranskiDogodek.zadnjaAktivnost | pretekliCas}}
+                                    </div>
+
+                                    <ng-template #statusKlepeta>
+                                        <i class="fa fa-circle offline"></i>
+                                        <span class="status"> ni aktivnosti</span>
+                                    </ng-template>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="chat">
+                <div class="chat-header clearfix m-0 border-bottom">
+                    <button class="btn btn-outline-secondary d-md-none" data-bs-toggle="collapse"
+                        data-bs-target="#main-sidebar-container" aria-controls="main-sidebar-container"
+                        (click)="openNav()" style="float: left; margin-left: 10px; margin-right: 5px;"><i
+                            class="fas fa-bars"></i></button>
+                    <h1 class="m-3 text-black float-st center" style="height: 3rem; overflow:hidden;
+                    white-space:nowrap;
+                    -ms-text-overflow:ellipsis;
+                    text-overflow:ellipsis;"
+                        *ngIf="selectedChat; else niPogovora">
+                        {{izbranPogovor.dogodekId.title}}
+                    </h1>
+
+                    <ng-template #niPogovora>
+                        <h1 class="m-3 text-black float-st center" style="height: 3rem;">
+                            Ni izbranega pogovora
+                        </h1>
+                    </ng-template>
+
+                </div>
+
+                <div class="chat-history" *ngIf="selectedChat; else niSelectedChata" #scrollMe>
+
+                    <ul class="m-b-0" *ngFor="let sporocilo of izbranPogovor.sporocila">
+                        <li class="clearfix">
+                            <div [className]="myMsg(sporocilo.userId._id) ? 'message-data text-end' : 'message-data'"
+                                *ngIf="myMsg(sporocilo.userId._id); else notMyMsg">
+
+                                <span class="message-data-time"><small>{{sporocilo.userId.uporabniskoIme}}
+                                        {{sporocilo.datum | dateFormate}} </small></span>
+                                <img src="assets/images/profileAvatars/avatarOptions/profileAvatar{{sporocilo.userId.slika}}.png"
+                                    alt="avatar" />
+                            </div>
+
+                            <ng-template #notMyMsg>
+                                <div
+                                    [className]="myMsg(sporocilo.userId._id) ? 'message-data text-end' : 'message-data'">
+
+                                    <img src="assets/images/profileAvatars/avatarOptions/profileAvatar{{sporocilo.userId.slika}}.png"
+                                        alt="avatar" />
+                                    <span class="message-data-time"><small>{{sporocilo.userId.uporabniskoIme}}
+                                            {{sporocilo.datum | dateFormate}}</small></span>
+                                </div>
+                            </ng-template>
+
+                            <div [className]="myMsg(sporocilo.userId._id) ? 'message other-message float-end' : 'message my-message'"
+                                *ngIf="myMsg(sporocilo.userId._id); else brezDelete">
+                                {{sporocilo.vsebina}}
+                                <a role="button" (click)="deleteMessage(izbranPogovor._id, sporocilo._id)">
+                                    <i class="fas fa-trash-alt text-secondary"></i>
+                                </a>
+                            </div>
+
+                            <ng-template #brezDelete>
+                                <div
+                                    [className]="myMsg(sporocilo.userId._id) ? 'message other-message float-end' : 'message my-message'">
+                                    {{sporocilo.vsebina}}
+                                </div>
+                            </ng-template>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <ng-template #niSelectedChata>
+                    <div class="chat-history">
+
+                    </div>
+                </ng-template>
+
+
+                <hr class="m-0" />
+                <div class="chat-message">
+                    <form id="myForm" (ngSubmit)="addMessage(izbranPogovor._id)" autocomplete="off">
+                        <div class="input-group row m-0 p-0">
+                            <input id="chatMessage" type="text" class="form-control" placeholder="Vnesite besedilo..."
+                                [(ngModel)]="novoSporocilo.vsebina" name="chatMsg" #chatMsg />
+
+                            <button type="submit"
+                                class="ms-2 p-0 col-auto col-sm-auto text-primary align-self-center float-end btn shadow-none"
+                                (click)="chatMsg.value = ''">
+                                <i class="fas fa-paper-plane fa-lg "></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
